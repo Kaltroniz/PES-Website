@@ -11,10 +11,11 @@
 
 .contact-form-container > h1 {
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 45px;
+    color: var(--color-primary, #1e293b);
     text-decoration: underline;
-    text-decoration-color: orangered;
+    text-decoration-color: var(--color-accent, #eab308);
     text-decoration-thickness: 2px;
     text-underline-offset: 15px;
     margin-bottom: 8%;
@@ -66,12 +67,20 @@
 
 .cnt-fm-btn {
     width: 30%;
-    padding:2% 2%; 
-    background-color: orangered;
+    padding: 12px 24px; 
+    background: var(--color-cta-gradient, linear-gradient(135deg, #d97706, #f59e0b));
     color: white;
+    font-weight: 600;
     border: none;
     border-radius: 50px;
     cursor: pointer;
+    box-shadow: 0 4px 15px var(--color-btn-shadow, rgba(245, 158, 11, 0.45));
+    transition: all 0.3s ease-in-out;
+}
+
+.cnt-fm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--color-btn-shadow, rgba(245, 158, 11, 0.6));
 }
 
 @media screen and (max-width: 600px) {

@@ -1,6 +1,8 @@
 .container {
   display: flex;
-  background-color: rgb(255, 102, 0);
+  background: var(--color-cta-gradient, linear-gradient(135deg, #d97706, #f59e0b));
+  box-shadow: 0 10px 30px var(--color-btn-shadow, rgba(245, 158, 11, 0.4));
+  border-radius: 20px;
   height: 15rem;
   margin-bottom: 3rem;
   margin-top: 3rem;

@@ -1,0 +1,290 @@
+/* ==========================================================================
+   VISION & MISSION COMPONENT STYLES (GOLDEN & BLACK THEME)
+   ========================================================================== */
+
+.vision-mission-section {
+  width: 100%;
+  max-width: 1240px;
+  margin: 4.5rem auto 5.5rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.vm-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.vm-kicker {
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d97706; /* Rich Amber Gold */
+  margin-bottom: 6px;
+}
+
+.vm-title {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 56px;
+  font-weight: 600;
+  color: #0f172a; /* Deep Black/Charcoal */
+  text-decoration: underline;
+  text-decoration-color: #eab308; /* Golden Accent */
+  text-underline-offset: 16px;
+  text-decoration-thickness: 3px;
+  margin: 0 0 1.8rem 0;
+}
+
+.vm-lead {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.75;
+  color: #334155;
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ==========================================================================
+   SPLIT CONTAINER (GOLDEN-BLACK THEME)
+   ========================================================================== */
+.vm-split-container {
+  display: flex;
+  gap: 32px;
+  background: #ffffff;
+  border: 1.5px solid #f1f5f9;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.vm-split-left-wrapper {
+  flex: 1 1 38%;
+  display: flex;
+}
+
+.vm-split-right-wrapper {
+  flex: 1 1 62%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left Column: Dark Charcoal / Black & Gold Banner */
+.vm-split-left {
+  width: 100%;
+  background: linear-gradient(155deg, #18181b 0%, #09090b 60%, #000000 100%);
+  border: 1px solid rgba(234, 179, 8, 0.35); /* Subtle Golden Border */
+  border-radius: 18px;
+  padding: 38px 32px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle Golden Ambient Glow on Banner */
+.vm-split-left::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.vm-split-pill {
+  display: inline-block;
+  background: rgba(234, 179, 8, 0.15);
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  color: #fde047; /* Bright Warm Gold */
+  font-family: "Outfit", sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+}
+
+.vm-split-banner-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.32;
+  margin: 0 0 16px 0;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.vm-split-banner-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #d4d4d8;
+  margin: 0 0 28px 0;
+}
+
+.vm-split-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-top: 1px solid rgba(234, 179, 8, 0.25);
+  padding-top: 22px;
+}
+
+.vm-split-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-family: "Outfit", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #fbbf24; /* Golden Yellow */
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-family: "Outfit", sans-serif;
+  font-size: 12.5px;
+  color: #a1a1aa;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.vm-split-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(234, 179, 8, 0.25);
+}
+
+/* Right Column: Mission Objectives List */
+.vm-split-right {
+  flex: 1 1 62%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vm-split-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.vm-split-item:hover {
+  background: #fffdfa; /* Warm golden-tinted white */
+  border-color: #f59e0b; /* Golden border */
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.1);
+  transform: translateX(6px);
+}
+
+/* Golden Circular Number Badge */
+.vm-split-num {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #92400e; /* Deep Amber */
+  background: #fef3c7; /* Light Golden Cream */
+  border: 1.5px solid #fde68a;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.vm-split-item:hover .vm-split-num {
+  background: #f59e0b;
+  color: #ffffff;
+  border-color: #f59e0b;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.35);
+}
+
+.vm-split-text {
+  flex: 1;
+}
+
+/* Title Styling: Bold Golden-Black Aesthetic */
+.vm-highlight-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #b45309; /* Rich Amber Gold */
+  margin: 0 0 8px 0;
+  line-height: 1.35;
+  transition: color 0.25s ease;
+}
+
+.vm-split-item:hover .vm-highlight-title {
+  color: #92400e;
+}
+
+.vm-split-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #475569;
+  font-weight: 400;
+  margin: 0;
+  text-align: justify;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media screen and (max-width: 960px) {
+  .vm-title {
+    font-size: 42px;
+  }
+  .vm-split-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .vm-split-left {
+    padding: 30px 24px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .vm-title {
+    font-size: 32px;
+  }
+  .vm-lead {
+    font-size: 16px;
+  }
+  .vm-split-item {
+    gap: 14px;
+    padding: 14px 16px;
+  }
+  .vm-highlight-title {
+    font-size: 18px;
+  }
+  .vm-split-desc {
+    font-size: 14.5px;
+  }
+}

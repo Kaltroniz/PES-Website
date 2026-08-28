@@ -17,7 +17,12 @@ const app = express();
 const logger = require('./src/middlewares/logger.js');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(multer().any());
+app.use((req, res, next) => {
+  if (req.headers['content-type'] && req.headers['content-type'].includes('multipart/form-data')) {
+    return multer().any()(req, res, next);
+  }
+  next();
+});
 app.use(cookieParser());
 app.use(cors({credentials: true, origin: 'http://localhost:5173'})); // TODO: update when deploying
 app.use(logger);

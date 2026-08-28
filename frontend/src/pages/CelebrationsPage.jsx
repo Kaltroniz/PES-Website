@@ -11,23 +11,21 @@ function CelebrationsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    request.get(`${import.meta.env.VITE_API_BASE}/events/list?type=celebrations`)
+    request.get(`${import.meta.env.VITE_API_BASE}/events/list?type=sunshinemasti`)
       .then(res => res.json())
       .then(data => {
         setEvents(data);
-        // alert("Celebrations events fetched successfully");
-        console.log("Celebrations events fetched successfully");
+        console.log("Sunshine Masti events fetched successfully");
       })
       .catch(err => console.log(err))
       .finally(() => setLoading(false)); 
   }, []);
 
-  // if(events.length == 0) return <>Loading</>;
   return (
     <>
     <Hero
       heroSliderImages={[heroImg]}
-      heroHeading="Celebrations"
+      heroHeading="Sunshine Masti"
     />
       <Events>
         {events.length ? events.map(event => (
@@ -39,7 +37,7 @@ function CelebrationsPage() {
             description={event.description}
             id={event._id}
           />
-        )) : <><br/><br/><h1>No Celebrations Events available...</h1></>}
+        )) : <><br/><br/><h1>No Sunshine Masti Events available...</h1></>}
       </Events>
       {loading && <><br/><br/><h1>Loading ...</h1></>}
     </>

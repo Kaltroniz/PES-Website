@@ -1,0 +1,35 @@
+/* ==========================================================================
+   SCROLL REVEAL ANIMATIONS (SMOOTH ACCELERATED HARDWARE STYLING)
+   ========================================================================== */
+
+.reveal-box {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up {
+  transform: translateY(45px);
+}
+
+.reveal-down {
+  transform: translateY(-45px);
+}
+
+.reveal-left {
+  transform: translateX(-50px);
+}
+
+.reveal-right {
+  transform: translateX(50px);
+}
+
+.reveal-fade {
+  transform: scale(0.96);
+}
+
+.reveal-box.revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}

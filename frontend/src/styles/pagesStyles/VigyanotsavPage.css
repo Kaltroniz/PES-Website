@@ -1,0 +1,613 @@
+/* ==========================================================================
+   VIGYANOTSAV PAGE STYLES - STANDARD PES WEBSITE THEME
+   ========================================================================== */
+
+.vigyanotsav-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: "Montserrat", sans-serif;
+}
+
+.vigyanotsav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   0. HERO BANNER WITH ULTRA-SMOOTH CROSSFADE & GOLDEN GLOW TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+.vigyan-hero {
+  position: relative;
+  height: 100dvh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6.5rem 1.5rem 5rem;
+  overflow: hidden;
+  background-color: #0b0f19;
+}
+
+.vigyan-hero-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.vigyan-hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vigyan-hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.vigyan-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.42) 0%,
+    rgba(15, 23, 42, 0.62) 60%,
+    rgba(15, 23, 42, 0.88) 100%
+  );
+  z-index: 2;
+}
+
+.vigyan-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.vigyan-hero-kicker {
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fbbf24;
+  background: rgba(217, 119, 6, 0.25);
+  border: 1px solid rgba(251, 191, 36, 0.45);
+  padding: 6px 18px;
+  border-radius: 30px;
+  margin-bottom: 1.2rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+}
+
+.vigyan-hero-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.08;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 50%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.9));
+}
+
+.vigyan-hero-subtitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 auto;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+}
+
+.vigyan-hero-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.hero-dot:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.hero-dot.active {
+  width: 32px;
+  border-radius: 12px;
+  background: #fbbf24;
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   1. STATS BAR
+   -------------------------------------------------------------------------- */
+.vigyan-stats-bar {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: 2rem 1.5rem;
+}
+
+.vigyan-stats-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.vigyan-stat-box {
+  text-align: center;
+}
+
+.vigyan-stat-number {
+  font-family: "Outfit", sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: #d97706;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.vigyan-stat-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.vigyan-stat-divider {
+  width: 1px;
+  height: 48px;
+  background: #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   2. CONTENT SECTION (EXACT EVENT.MD CONTENT)
+   -------------------------------------------------------------------------- */
+.vigyanotsav-content-section {
+  padding: 4rem 0 3.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.content-heading {
+  font-family: "Outfit", sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.content-tagline {
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #d97706;
+  margin: 0 0 2.5rem 0;
+}
+
+.content-text-block {
+  max-width: 900px;
+  margin: 0 0 2.5rem 0;
+}
+
+.content-text-block p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: #334155;
+  margin-bottom: 1.5rem;
+}
+
+/* What Happens Card */
+.what-happens-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #d97706;
+  border-radius: 16px;
+  padding: 2.2rem 2.5rem;
+  max-width: 850px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.what-happens-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+}
+
+.what-happens-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.what-happens-list li {
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #334155;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.what-happens-list li::before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  top: -2px;
+  color: #d97706;
+  font-size: 22px;
+}
+
+/* Closing Highlight Box */
+.closing-highlight-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fde68a;
+  border-radius: 16px;
+  padding: 1.8rem 2.2rem;
+  max-width: 850px;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.08);
+}
+
+.closing-highlight-box p {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #92400e;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Inline Read More PDF Link */
+.read-more-inline-link {
+  color: #2563eb;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: color 0.2s ease;
+}
+
+.read-more-inline-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   3. OPTION 3: INTERACTIVE 3D PERSPECTIVE CARD STACK GALLERY
+   -------------------------------------------------------------------------- */
+.vigyanotsav-3d-gallery-section {
+  padding: 5rem 0 6rem;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.gallery-header-center {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.5rem;
+}
+
+.gallery-kicker {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d97706;
+  background: #fef3c7;
+  padding: 4px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.gallery-heading {
+  font-family: "Outfit", sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.gallery-subtext {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* 3D Wrapper & Stage */
+.gallery-3d-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+  width: 100%;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+
+.gallery-3d-stage {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+.gallery-3d-card {
+  position: absolute;
+  width: 520px;
+  height: 360px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  background: #ffffff;
+  border: 3px solid #ffffff;
+}
+
+.card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 20px 18px;
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.85) 40%, rgba(15, 23, 42, 0.96) 100%);
+  color: #ffffff;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.active-center .card-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.photo-tag {
+  font-family: "Outfit", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fbbf24;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.photo-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: #ffffff;
+}
+
+.photo-caption {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13.5px;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 3D Positions */
+.active-center {
+  transform: translateX(0) scale(1) translateZ(0);
+  z-index: 10;
+  border-color: #d97706;
+  box-shadow: 0 20px 45px rgba(217, 119, 6, 0.3);
+  opacity: 1;
+}
+
+.left-1 {
+  transform: translateX(-48%) scale(0.82) rotateY(18deg) translateZ(-80px);
+  z-index: 6;
+  opacity: 0.85;
+  filter: brightness(0.8);
+}
+
+.right-1 {
+  transform: translateX(48%) scale(0.82) rotateY(-18deg) translateZ(-80px);
+  z-index: 6;
+  opacity: 0.85;
+  filter: brightness(0.8);
+}
+
+.left-2 {
+  transform: translateX(-82%) scale(0.66) rotateY(32deg) translateZ(-160px);
+  z-index: 3;
+  opacity: 0.45;
+  filter: brightness(0.6);
+}
+
+.right-2 {
+  transform: translateX(82%) scale(0.66) rotateY(-32deg) translateZ(-160px);
+  z-index: 3;
+  opacity: 0.45;
+  filter: brightness(0.6);
+}
+
+.hidden-card {
+  transform: scale(0.5) translateZ(-300px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Nav Buttons */
+.gallery-3d-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  color: #0f172a;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
+}
+
+.gallery-3d-prev {
+  left: 10px;
+}
+
+.gallery-3d-next {
+  right: 10px;
+}
+
+.gallery-3d-nav-btn:hover {
+  background: #d97706;
+  color: #ffffff;
+  border-color: #d97706;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Dots Navigation */
+.gallery-3d-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.gallery-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.gallery-dot:hover {
+  background: #d97706;
+}
+
+.gallery-dot.active {
+  width: 30px;
+  border-radius: 12px;
+  background: #d97706;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 900px) {
+  .gallery-3d-card {
+    width: 420px;
+    height: 300px;
+  }
+  .left-1 {
+    transform: translateX(-40%) scale(0.82);
+  }
+  .right-1 {
+    transform: translateX(40%) scale(0.82);
+  }
+  .left-2, .right-2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery-3d-card {
+    width: 300px;
+    height: 230px;
+  }
+  .left-1, .right-1, .left-2, .right-2 {
+    display: none;
+  }
+  .gallery-3d-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+  }
+}

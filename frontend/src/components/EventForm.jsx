@@ -68,16 +68,15 @@ const EventForm = ({ onUpdate })=>{
             </div>
 
             <div className="event-field">
-             {/* ["celebrations", "outreach", "competitions", "others"], */}
              <label className="event-lbl">Select Page: </label>
-             <select className="event-select-input" name="type" placeholder="Select Page" required>
-             <option value="" disabled={true} selected={true}>Select</option>
-             <option value="outreach">Outreach</option>
-             <option value="celebrations">Celebrations</option>
-             <option value="competitions">Competitions</option>
-             <option value="others">Others</option> 
+             <select className="event-select-input" name="type" placeholder="Select Page" required defaultValue="">
+             <option value="" disabled={true}>Select</option>
+             <option value="homepage">Home Page (Latest Updates)</option>
+             <option value="vigyanotsav">Vigyanotsav</option>
+             <option value="sunshinemasti">Sunshine Masti</option>
+             <option value="letstalk">Let's Talk</option>
+             <option value="others">Other Events</option> 
              </select> 
-
             </div> 
 
 

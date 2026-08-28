@@ -96,10 +96,12 @@ input[type=submit] {
     font-family: Montserrat classic;
     font-style: italic;
     text-decoration: underline;
-    color: orangered;
+    color: var(--color-primary, #1e293b);
+    text-decoration-color: var(--color-accent, #eab308);
 }
     .quote2{
         font-size: 140%;
-        color: orange;
+        color: var(--color-accent, #eab308);
+        font-weight: 600;
     }
 }

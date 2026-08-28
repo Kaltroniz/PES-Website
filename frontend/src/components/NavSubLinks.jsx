@@ -18,8 +18,8 @@ const links = [
           Link: "/paathshala"
         },
         {
-          Head: "School Outreach",
-          Link: "/schooloutreach"
+          Head: "Outreach",
+          Link: "/outreach"
         }
       ],
     },
@@ -28,18 +28,17 @@ const links = [
       submenu: true,
       sublinks: [
         {
-          Head: "Outreach",
-          Link: "/outreach"
+          Head: "Vigyanotsav",
+          Link: "/vigyanotsav"
         },
         {
-          Head: "Festival Celebrations",
-          Link: "/celebrations"
+          Head: "Sunshine Masti",
+          Link: "/sunshinemasti"
         },
         {
-          Head: "Competitions",
-          Link: "/competitions"
+          Head: "Let's Talk",
+          Link: "/letstalk"
         },
-  
         {
           Head: "Other Events",
           Link: "/otherevents"

@@ -79,15 +79,23 @@ nav {
 }
 
 .login-button {
-  /* background-color: rgb(255, 102, 0); */
-  background-color: black;
-  /* background-color: orangered; */
+  background: var(--color-cta-gradient, linear-gradient(135deg, #d97706, #f59e0b));
   border-radius: 50px;
-  padding: 12px 22px;
-  color: white;
+  padding: 10px 24px;
+  color: white !important;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 13px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px var(--color-btn-shadow, rgba(245, 158, 11, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px var(--color-btn-shadow, rgba(245, 158, 11, 0.6));
+  background: linear-gradient(135deg, #b45309, #d97706);
 }
 
 /* Mobile Nav Links */

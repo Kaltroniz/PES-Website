@@ -5,9 +5,20 @@ const router = Router();
 
 router.get('/list', async (req, res) => {
   let events = [];
-  let type=undefined;
-  if (type) events = await Event.find({ type }).sort({date: -1}); 
-  else events = await Event.find({}).sort({date: -1});
+  let type = req.query.type;
+  if (type) {
+    let typeQuery = type;
+    if (type === 'vigyanotsav' || type === 'outreach') {
+      typeQuery = { $in: ['vigyanotsav', 'outreach'] };
+    } else if (type === 'sunshinemasti' || type === 'celebrations') {
+      typeQuery = { $in: ['sunshinemasti', 'celebrations'] };
+    } else if (type === 'letstalk' || type === 'competitions') {
+      typeQuery = { $in: ['letstalk', 'competitions'] };
+    }
+    events = await Event.find({ type: typeQuery }).sort({date: -1});
+  } else {
+    events = await Event.find({}).sort({date: -1});
+  }
   res.status(200).json(events);
 });
 

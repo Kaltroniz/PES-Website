@@ -1,28 +1,66 @@
+/* =========================================================
+   PEHCHAAN EK SAFAR (PES) - IMPERIAL CHAMPAGNE GOLD THEME
+   ========================================================= */
+
 :root {
-  /* font-family: "Roboto", sans-serif; */
+  /* Imperial Champagne Gold & Midnight Slate */
+  --color-primary: #1e293b;
+  --color-primary-dark: #0f172a;
+  --color-accent: #eab308;
+  --color-accent-hover: #ca8a04;
+  --color-subheading: #fde047;
+  --color-cta: #d97706;
+  --color-cta-hover: #b45309;
+  --color-cta-gradient: linear-gradient(135deg, #d97706, #f59e0b);
+  --color-btn-shadow: rgba(245, 158, 11, 0.45);
+  --color-badge-bg: rgba(234, 179, 8, 0.14);
+  --color-badge-border: rgba(234, 179, 8, 0.4);
+  --color-badge-text: #b45309;
+  --color-card-border: rgba(234, 179, 8, 0.25);
+  --color-hero-accent: #fef08a;
+
   font-family: 'Montserrat', sans-serif;
-
-  color-scheme: light dark;
-  color: black;
-  background-color: white;
-
+  color-scheme: light;
+  color: #1e293b;
+  background-color: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-  --color-primary: rgb(255,102,0);
-  --color-primary-dark: rgb(153,51,0);
 }
 
-body {
+html, body {
   margin: 0px;
+  padding: 0px;
+  width: 100%;
+  overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
+  background-color: #f8fafc;
 }
 
 #root {
+  width: 100%;
   margin: 0 auto;
-  color: black;
+  overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
+}
+
+/* Custom Sleek Transparent Golden Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090e17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(217, 119, 6, 0.45);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.85);
 }

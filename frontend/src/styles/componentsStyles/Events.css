@@ -229,19 +229,19 @@
 }
 
 .event-text-input:hover {
-  box-shadow: 1px 1px 2px orangered;
+  box-shadow: 0 0 0 2px var(--color-accent, #eab308);
 }
 
 .event-select-input:hover {
-  box-shadow: 1px 1px 2px orangered;
+  box-shadow: 0 0 0 2px var(--color-accent, #eab308);
 }
 
 .event-date:hover {
-  box-shadow: 1px 1px 2px orangered;
+  box-shadow: 0 0 0 2px var(--color-accent, #eab308);
 }
 
 .event-submit:hover {
-  box-shadow: 1px 1px 2px orangered;
+  box-shadow: 0 0 0 2px var(--color-accent, #eab308);
 }
 
 

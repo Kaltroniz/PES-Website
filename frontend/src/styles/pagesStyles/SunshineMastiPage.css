@@ -1,0 +1,704 @@
+/* ==========================================================================
+   SUNSHINE MASTI PAGE STYLES - STANDARD PES WEBSITE THEME
+   ========================================================================== */
+
+.sunshine-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: "Montserrat", sans-serif;
+}
+
+.sunshine-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO BANNER WITH ULTRA-SMOOTH CROSSFADE
+   -------------------------------------------------------------------------- */
+.sunshine-hero {
+  position: relative;
+  height: 100dvh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6.5rem 1.5rem 5rem;
+  overflow: hidden;
+  background-color: #0b0f19;
+}
+
+.sunshine-hero-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.sunshine-hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sunshine-hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sunshine-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.42) 0%,
+    rgba(15, 23, 42, 0.62) 60%,
+    rgba(15, 23, 42, 0.88) 100%
+  );
+  z-index: 2;
+}
+
+.sunshine-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sunshine-hero-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.08;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 50%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.9));
+}
+
+.sunshine-hero-subtitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 auto;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+}
+
+.sunshine-hero-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.hero-dot:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.hero-dot.active {
+  width: 32px;
+  border-radius: 12px;
+  background: #fbbf24;
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   2. STATS BAR
+   -------------------------------------------------------------------------- */
+.sunshine-stats-bar {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: 2rem 1.5rem;
+}
+
+.sunshine-stats-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.sunshine-stat-box {
+  text-align: center;
+}
+
+.sunshine-stat-number {
+  font-family: "Outfit", sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: #d97706;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.sunshine-stat-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.sunshine-stat-divider {
+  width: 1px;
+  height: 48px;
+  background: #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   3. CONTENT SECTION (EXACT EVENT.MD CONTENT)
+   -------------------------------------------------------------------------- */
+.sunshine-content-section {
+  padding: 4rem 0 3.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.content-heading {
+  font-family: "Outfit", sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.content-tagline {
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #d97706;
+  margin: 0 0 2.5rem 0;
+}
+
+.content-text-block {
+  max-width: 900px;
+  margin: 0 0 3rem 0;
+}
+
+.content-text-block p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: #334155;
+  margin-bottom: 1.5rem;
+}
+
+/* Feature Grid Cards */
+.what-happens-wrapper {
+  margin-top: 2rem;
+}
+
+.what-happens-heading {
+  font-family: "Outfit", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1.8rem;
+}
+
+.what-happens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+}
+
+.feature-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem 1.8rem;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #d97706, #fbbf24);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #fef3c7;
+  color: #d97706;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-wrap {
+  background: #d97706;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.feature-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+
+.feature-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SHARED DEMO SECTION STYLES
+   -------------------------------------------------------------------------- */
+.sunshine-demo-section {
+  padding: 5rem 0 6rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.demo-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.5rem;
+}
+
+.demo-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.demo-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.demo-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 1: ORGANIC 3D TILT POLAROID MEMORIES GRID
+   -------------------------------------------------------------------------- */
+.style1-bg {
+  background: #fdfbf7;
+}
+
+.style1-badge {
+  color: #b45309;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+}
+
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.polaroid-card {
+  position: relative;
+  background: #ffffff;
+  padding: 14px 14px 22px;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  border: 1px solid #f1f5f9;
+}
+
+/* Organic Rotations */
+.rotate-pos-1 { transform: rotate(-3deg); }
+.rotate-pos-2 { transform: rotate(3.5deg); }
+.rotate-pos-3 { transform: rotate(-2.5deg); }
+.rotate-pos-4 { transform: rotate(4deg); }
+
+/* Golden Pin */
+.polaroid-pin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fbbf24, #d97706);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.polaroid-img-box {
+  width: 100%;
+  height: 220px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.polaroid-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.polaroid-footer {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.polaroid-tag {
+  font-family: "Outfit", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #d97706;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.polaroid-label {
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-12px) rotate(0deg) scale(1.03);
+  z-index: 15;
+  box-shadow: 0 20px 40px rgba(217, 119, 6, 0.22);
+}
+
+.polaroid-card:hover .polaroid-img-box img {
+  transform: scale(1.08);
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 2: 45-DAY SUMMER CAMP STORY JOURNEY TRACK
+   -------------------------------------------------------------------------- */
+.style2-bg {
+  background: #ffffff;
+}
+
+.style2-badge {
+  color: #0284c7;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+}
+
+.story-track-container {
+  position: relative;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding: 2rem 0 3rem;
+  scrollbar-width: thin;
+}
+
+.story-track-line {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d97706, #3b82f6, #10b981, #d97706);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.story-cards-row {
+  display: flex;
+  gap: 1.8rem;
+  position: relative;
+  z-index: 2;
+  min-width: max-content;
+  padding: 0 1rem;
+}
+
+.story-step-card {
+  width: 250px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.story-step-badge {
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  color: #ffffff;
+  background: #d97706;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.3);
+}
+
+.story-img-wrap {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.story-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.story-card-body h4 {
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.story-step-card:hover {
+  transform: translateY(-8px);
+  background: #ffffff;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  border-color: #cbd5e1;
+}
+
+.story-step-card:hover .story-img-wrap img {
+  transform: scale(1.08);
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 3: MODERN BENTO GRID SPOTLIGHT
+   -------------------------------------------------------------------------- */
+.style3-bg {
+  background: #f8fafc;
+}
+
+.style3-badge {
+  color: #7c3aed;
+  background: #f3e8ff;
+  border: 1px solid #ddd6fe;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 1.2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.bento-tile {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.bento-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.bento-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.88) 100%);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.bento-tag {
+  font-family: "Outfit", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fbbf24;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.bento-overlay h3 {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Tile Grid Spans */
+.bento-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.bento-feature .bento-overlay h3 {
+  font-size: 24px;
+}
+
+.bento-medium {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.bento-small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.bento-small .bento-overlay h3 {
+  font-size: 14px;
+}
+
+.bento-tile:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.bento-tile:hover img {
+  transform: scale(1.08);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bento-feature {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .bento-medium {
+    grid-column: span 1;
+  }
+  .bento-small {
+    grid-column: span 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sunshine-hero-title {
+    font-size: 44px;
+  }
+  .sunshine-hero-subtitle {
+    font-size: 18px;
+  }
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-feature, .bento-medium, .bento-small {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}

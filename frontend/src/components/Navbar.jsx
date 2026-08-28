@@ -68,12 +68,11 @@ function Navbar(){
             
             <ul className="nav-links">
               <li><NavLink to="/home" className="nav-item" activeClassName='active'>Home</NavLink></li>
+              {/* Navsublinks */}
+              <NavSubLinks />
               <li><NavLink to="/ourteam" className="nav-item" activeClassName='active'>Our Team</NavLink></li>
               <li><NavLink to="/contact" className="nav-item" activeClassName='active'>Contact Us</NavLink></li>
               {/* <li><NavLink to="/achievement" className="nav-item" activeClassName='active'>Achievements</NavLink></li> */}
-            
-              {/* Navsublinks */}
-              <NavSubLinks />
 
               {!loggedIn ? <li><NavLink to="/login" className="nav-item login-button" activeClassName='active'>Login</NavLink></li> : <li><NavLink to="/dashboard" className="nav-item login-button" activeClassName='active'>Dashboard</NavLink></li>}
             </ul>
@@ -85,11 +84,10 @@ function Navbar(){
               className="mobile-nav-links"
             >
               <li><NavLink to="/home" className="mobile-nav-item" activeClassName='active'>Home</NavLink></li>
-              <li><NavLink to="/ourteam" className="mobile-nav-item" activeClassName='active'>Our Team</NavLink></li>
-              <li><NavLink to="/contact" className="mobile-nav-item" activeClassName='active'>Contact Us</NavLink></li>
-            
               {/* Navsublinks */}
               <NavSubLinks />
+              <li><NavLink to="/ourteam" className="mobile-nav-item" activeClassName='active'>Our Team</NavLink></li>
+              <li><NavLink to="/contact" className="mobile-nav-item" activeClassName='active'>Contact Us</NavLink></li>
 
                 {loggedIn ? <li><NavLink to="/dashboard" className="mobile-nav-item" activeClassName='active'>Dashboard</NavLink></li> : <li><NavLink to="/login" className="mobile-nav-item" activeClassName='active'>Login</NavLink></li>}
                          

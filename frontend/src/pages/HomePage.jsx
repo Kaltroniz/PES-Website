@@ -3,132 +3,119 @@ import { useLocation } from "react-router-dom";
 
 import "../styles/pagesStyles/HomePage.css";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-{
-  /* Importing different components to be used on homepage*/
-}
+/* Importing modular homepage components */
+import HeroSection from "../components/HeroSection";
+import VisionMission from "../components/VisionMission";
+import ProblemsWeAddress from "../components/ProblemsWeAddress";
+import WhatWeDoSection from "../components/WhatWeDoSection";
+import OurImpact from "../components/OurImpact";
+import MeetTeamHome from "../components/MeetTeamHome";
+import LatestUpdates from "../components/LatestUpdates";
+import ConnectWithUs from "../components/ConnectWithUs";
+import Testimonial2 from "../components/Testimonial2";
 import StickyJoinButton from "../components/StickyJoinButton";
 import StickyDonateButton from "../components/StickyDonateButton";
-import WeDoCard from "../components/WhatWeDoCard";
-import Hero from "../components/Hero";
-import HeroSection from "../components/HeroSection";
-import Testimonial from "../components/Testimonial";
-import Testimonial2 from "../components/Testimonial2";
-import DonateCompo from "../components/DonateCompo";
 
-{
-  /* Images for homepage*/
-}
-import homepage_about_1 from "../assets/home-page-about-1.jpg";
-import homepage_about_2 from "../assets/home-page-about-2.jpg";
-import homepage_pathshala from "../assets/home-page-our-work-pathshala.jpg";
-import homepage_pathshala_2 from "../assets/home-page-our-work-pathshala-2.jpg";
-import homepage_outreach from "../assets/home-page-our-work-outreach.jpg";
-import homepage_outreach_2 from "../assets/home-page-our-work-outreach-2.jpg";
-import homepage_others from "../assets/home-page-our-work-others.jpg";
-import homepage_others_2 from "../assets/home-page-our-work-others-2.jpg";
+/* Images for Who We Are */
 import about_1 from "../assets/about-1.jpg";
 import about_2 from "../assets/about-2.jpg";
 import about_3 from "../assets/about-3.jpg";
-import Hero_5 from "../assets/home_hero_sss.jpg";
+
+/* Images for Hero section */
+import Hero_1 from "../assets/home_hero_director.png";
 import Hero_2 from "../assets/home_hero_paathshala.png";
 import Hero_3 from "../assets/home_hero_outreach.jpg";
 import Hero_4 from "../assets/home_hero_atl.jpg";
-import Hero_1 from "../assets/home_hero_director.png";
+import Hero_5 from "../assets/home_hero_sss.jpg";
 
-{
-  /* Images for testimonial */
-}
-import testimonial_1 from "../assets/home_testimonials/photo.png";
-import testimonial_2 from "../assets/home_testimonials/photo.png";
-import testimonial_3 from "../assets/home_testimonials/photo.png";
-import testimonial_4 from "../assets/home_testimonials/photo.png";
-import testimonial_5 from "../assets/home_testimonials/harpreet sir.jpg";
-
-{
-  /* Images for Hero section*/
-}
-import hero_image1 from "../assets/hero_image1.jpg";
-import hero_image2 from "../assets/hero_image2.jpg";
-import hero_image3 from "../assets/hero_image3.jpg";
-import hero_image4 from "../assets/hero_image4.jpg";
-
-// Importing SVGs for Achievement section
-import holdingHand from "../assets/holding-hand.svg";
-import volunteerIcon from "../assets/dove-solid.svg";
-import personIcon from "../assets/person-solid.svg";
-
-{
-  /* Array of images for the hero section */
-}
-const heroSliderImages = [hero_image1, hero_image2, hero_image3, hero_image4];
+/* Images for testimonial */
+import testimonial_1 from "../assets/testimonial-1.jpg";
+import testimonial_2 from "../assets/testimonial-2.jpg";
+import testimonial_3 from "../assets/governingbody/Brajesh.jpeg";
+import testimonial_4 from "../assets/governingbody/Vipul.jpeg";
+import testimonial_5 from "../assets/patronAndMentor/harpreet_sir.jpg";
 
 // Data for Hero section
 const heroData = [
   {
+    isQuoteSlide: true,
+    heading: "Shantideva Quote",
+  },
+  {
     img: Hero_1,
     heading: "Education",
-    subheading: "4 underpriviledged",
-    description: "Shaping Identities, Redefining Education: Pehchaan empowers young minds, nurturing their potential to build a brighter tomorrow. We strive to redefine education, fostering personal growth and creating a positive impact on the identities of the individuals we serve. "
-    },
+    subheading: "for underprivileged",
+    description:
+      "Shaping Identities, Redefining Education: Pehchaan empowers young minds, nurturing their potential to build a brighter tomorrow. We strive to redefine education, fostering personal growth and creating a positive impact on the identities of the individuals we serve.",
+  },
   {
     img: Hero_2,
     heading: "Education",
-    subheading: "4 underpriviledged",
-    description: "Paathshala provides daily tuition classes for economically challenged children. We also support their admission into esteemed institutions such as KV, JNV and Navodaya, ensuring access to quality education. Our mission is to empower every child and breaking barriers for a brighter future."    },
+    subheading: "for underprivileged",
+    description:
+      "Paathshala provides daily tuition classes for economically challenged children. We also support their admission into esteemed institutions such as KV, JNV and Navodaya, ensuring access to quality education. Our mission is to empower every child and break barriers for a brighter future.",
+  },
   {
     img: Hero_3,
     heading: "Mentorship",
     subheading: "Sparking Curiosity",
-    description: "Outreach: Fostering scientific temper and financial literacy in Ropar's students through career counseling sessions, seminars, and workshops. We engage with both private and government schools, empowering students for a knowledge-rich and financially informed future." },
+    description:
+      "Outreach: Fostering scientific temper and financial literacy in Ropar's students through career counseling sessions, seminars, and workshops. We engage with both private and government schools, empowering students for a knowledge-rich and financially informed future.",
+  },
   {
     img: Hero_4,
     heading: "Raising",
     subheading: "The Bar",
-    description:"Atal Tinkering Labs: Extending beyond classrooms, we empower through ATLs, training teachers and fostering innovation. Our commitment is to cultivate a culture of creativity, preparing students for a dynamic future." },
+    description:
+      "Atal Tinkering Labs: Extending beyond classrooms, we empower through ATLs, training teachers and fostering innovation. Our commitment is to cultivate a culture of creativity, preparing students for a dynamic future.",
+  },
   {
     img: Hero_5,
     heading: "School Safar",
-    subheading: "Saathi  (SSS) ",
-    description:"Empowering meritorious students in financial adversity through resources and mentorship. We conduct fair tests and interviews to ensure a transparent selection process, nurturing their academic journey and future success."},
+    subheading: "Saathi (SSS)",
+    description:
+      "Empowering meritorious students in financial adversity through resources and mentorship. We conduct fair tests and interviews to ensure a transparent selection process, nurturing their academic journey and future success.",
+  },
 ];
 
-// Data for Testimonial section
+// Data for Testimonials
 const testimonialData = [
+  {
+    name: "Prof. Harpreet Singh",
+    description:
+      "(Mentor) As a mentor of Pehchaan Ek Safar, I feel privileged to witness volunteers dedicating time and resources to educate underprivileged children alongside their studies. It's heartening to see them not only teach but also incorporate modern experiential learning methods. Education is key for financial sustainability and fostering good citizenship. Live Long, Pehchaan Ek Safar!",
+    img: testimonial_5,
+  },
   {
     name: "Sanyukta Marandi",
     description:
-    "(Volunteer) I had always wanted to be a part of something that strived towards making this world a better place, and Pehchaan provided me just that. Everyday we get to learn from the kids as much as they learn from us. Also, we not only help the children with their education, but also try to guide them in any way possible. The team, the children, the mentors and guides, we are all a family now. It doesn't feel like we are working for anyone else, It's like we are working for ourselves. In this journey of spreading love and education we have come a long way, and I believe we've still got a long journey to cover."
-    ,img: testimonial_1,
+      "(Volunteer) Everyday we get to learn from the kids as much as they learn from us. Also, we not only help the children with their education, but also try to guide them in any way possible. The team, the children, the mentors and guides, we are all a family now. In this journey of spreading love and education we have come a long way, and we've still got a long journey to cover.",
+    img: testimonial_1,
   },
   {
     name: "Versha Chaudhary",
     description:
-      "(Founding Member) Pehchaan ek safar is an effort to help and uplift the needy, which eventually contributes to the Nation building. Every time I visited those kids I used to receive their long smiles and inner mental peace as a regular reward. This has been a continuous source of motivation for me and hence I was able to connect with new creative paths to help those kids. That amazing experience of those incredible smiles and self satisfaction beats in my heart even today. I feel lucky and proud of myself and my team to be able to initiate this noble cause. Initial phase is always a challenging part for every journey ",
+      "(Founding Member) Pehchaan Ek Safar is an effort to help and uplift the needy, which eventually contributes to Nation building. Every time I visited those kids I used to receive their warm smiles and inner peace as a regular reward. That amazing experience of those incredible smiles and self-satisfaction beats in my heart even today.",
     img: testimonial_2,
   },
   {
     name: "Mahantesh Khetri",
     description:
-      "(Founding Member) Proud to be a founding member of Pehchaan Ek Safar, an NGO focusing on educating underprivileged children. Our journey began with a few volunteers near IIT Ropar, and now we've expanded to support hundreds of kids, registering them in formal schooling with dedicated volunteers providing crucial assistance and skill training. Our ongoing mission embraces kindness and skilled volunteers to achieve even greater milestones ahead."
-       ,img: testimonial_3,
+      "(Founding Member) Proud to be a founding member of Pehchaan Ek Safar, an NGO focusing on educating underprivileged children. Our journey began with a few volunteers near IIT Ropar, and now we've expanded to support hundreds of kids, registering them in formal schooling with dedicated volunteers providing crucial assistance.",
+    img: testimonial_3,
   },
   {
     name: "Atul Singh",
     description:
-      "(Founding Member) In late 2017, as founding members wandering IIT Ropar, we discovered local children deprived of education. With support from fellow students and the institute, we formed PEHCHAAN EK SAFAR, an NGO aiming to bridge the gap between privileged and underprivileged, fostering identity and citizenship pride. Personally fulfilling, our work promotes light over darkness. The NGO rapidly expands, focusing on education and instilling scientific temper in youth. Best wishes to the Pehchaan family for ongoing contributions to a better tomorrow.",
-      img: testimonial_4,
-  },
-  {
-    name: "Prof Harpreet Singh",
-    description:
-      "(Mentor) As a mentor of Pehchaan Ek Safar,I feel privileged to witness volunteers dedicating time and resources to educate underprivileged children alongside their studies. Its heartening to see them not only teach but also incorporate the latest learning methods. Education is key for financial sustainability and fostering good citizenship. Congratulations to the volunteers for shaping the future of these children, guiding them out of the darkness of illiteracy. You are the real heroes, setting a beautiful example of service to humanity. Thank you for your inspiring work. Live Long, Pehchaan Ek Safar! "
-      ,img: testimonial_5,
+      "(Founding Member) In late 2017, as founding members wandering IIT Ropar, we discovered local children deprived of education. With support from fellow students and the institute, we formed PEHCHAAN EK SAFAR, an NGO aiming to bridge the gap between privileged and underprivileged.",
+    img: testimonial_4,
   },
 ];
+
+import ScrollReveal from "../components/ScrollReveal";
 
 function HomePage() {
   const settingsTestimonial = {
@@ -139,7 +126,7 @@ function HomePage() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
   };
 
   const settingsHero = {
@@ -156,30 +143,30 @@ function HomePage() {
     autoplaySpeed: 8000,
     pauseOnHover: false,
   };
+
   const location = useLocation();
 
   useEffect(() => {
-    // Scroll instant to FAQ section if the location is '/faq'
     if (location.pathname === "/faq") {
       const faqSection = document.getElementById("faq-section");
       if (faqSection) {
-        faqSection.scrollIntoView({ behavior: "instant", block:"start",inline:"nearest" });
+        faqSection.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" });
       }
     }
   }, [location]);
 
   useEffect(() => {
-    // Scroll to about us section if the location is '/aboutus'
     if (location.pathname === "/aboutus") {
       const abtSection = document.getElementById("about-us");
       if (abtSection) {
-        abtSection.scrollIntoView({ behavior: "instant", block:"start",inline:"nearest" });
+        abtSection.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" });
       }
     }
   }, [location]);
 
   return (
     <>
+      {/* 0. HERO SECTION (With Sanskrit Shantideva Quote Slide) */}
       <section className="hero">
         <Slider {...settingsHero}>
           {heroData.map((item, index) => (
@@ -190,133 +177,129 @@ function HomePage() {
         </Slider>
       </section>
 
+      {/* 1. WHO WE ARE */}
       <section className="AboutUs" id="about-us">
-        <h1>ABOUT US</h1>
+        <ScrollReveal direction="up">
+          <div className="who-we-are-header">
+            <span className="who-we-are-kicker">OUR IDENTITY & ESSENCE</span>
+            <h1 className="who-we-are-title">WHO WE ARE</h1>
+          </div>
+        </ScrollReveal>
+
         <div className="AboutUs-content">
-          <div className="AboutUs-p">
-            <p>
-            Pehchaan Ek Safar, a non-profit organization initiated and managed by students of IIT Ropar, stands dedicated to eradicating illiteracy and championing the Right to Education for children from socio-economically disadvantaged backgrounds. In a landscape where access to education is a privilege and quality education remains elusive for underprivileged children, we recognize the urgency to counteract the widening societal gap exacerbated by the commodification of education. Pehchaan Ek Safar strives to fill this void by offering free, quality education in a nurturing environment. Through a mission of empowerment, we aim to equip these children with the tools and knowledge necessary to create a better, brighter, and happier future for themselves, ensuring they are not at a disadvantage compared to their more privileged counterparts.
-
-            </p>
-          </div>
-
-          <div>
-            <img src={homepage_pathshala} className="AboutUs-img"></img>
-          </div>
-
-          <div className="about-img">
-            <div className="about-img-c1">
-              <img src={about_1} className="about-img-1"></img>
+          {/* Story Text - Slide from Left */}
+          <ScrollReveal direction="left" className="AboutUs-story-wrapper">
+            <div className="AboutUs-story">
+              <p className="who-we-are-main-para">
+                <strong>Pehchaan Ek Safar (PES)</strong> is a journey of shared humanity, born from a simple, quiet belief: <em>every child deserves to be seen, heard, and nurtured.</em>
+              </p>
+              <p className="who-we-are-sub-para">
+                Registered as a non-profit organization in 2019, we are a family of students and faculty advisors of <strong>IIT Ropar</strong> dedicated to walking alongside the weaker sections of our society. We step into marginalized neighbourhoods to hold hands with families, ensuring that education, warmth, and care reach the doors of those who need it most, without any discrimination based on caste, creed, sex, or religion.
+              </p>
             </div>
-            <div className="about-img-c2">
-              <div>
-                <img src={about_2} className="about-img-2"></img>
+          </ScrollReveal>
+
+          {/* Image Collage - Slide from Right */}
+          <ScrollReveal direction="right" delay={150} className="about-images-wrapper-container">
+            <div className="about-images-wrapper">
+              <div className="about-img-left">
+                <img src={about_1} alt="PES Classroom" />
               </div>
-              <div>
-                <img src={about_3} className="about-img-3"></img>
+              <div className="about-img-right">
+                <img src={about_2} alt="PES Mentorship" />
+                <img src={about_3} alt="PES Activities" />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      <section className="OurWork">
-        <h1>WHAT WE DO</h1>
-        <div className="OurWork-Content">
-          {/* Make sure the image are in 3:4 ratio */}
-          <WeDoCard
-            img={homepage_pathshala_2}
-            title="PAATHSHALA"
-            details="Here at Paathshala we reach out to the underprivileged students, aiming to aid them in their education. Paathshala regularly provides free quality tuitions to the students, arrange sports and extracurricular activities for their all-round development, raising awareness among the parents on education and much more."
-            link="/paathshala"
-          />
-          <WeDoCard
-            img={homepage_outreach_2}
-            title="OUTREACH"
-            details="Expanding our circle, outreach program sends volunteers outside Paathshala for conducting sessions in schools in Ropar district. Through our outreach team, we conduct career counselling sessions, health related talks, science and technology information sessions and more."
-            link="/outreach"
-          />
-          <WeDoCard
-            img={homepage_others_2}
-            title="EVENTS"
-            details="Apart from the outreach program, we also organize events for the students. We schedule events for important days of the year, celebrate festivals, organize competitions and other activities to boost enthusiasm."
-             link="/otherevents"
-          />
+          </ScrollReveal>
         </div>
       </section>
 
-      <DonateCompo />
+      {/* 2. OUR VISION & MISSION */}
+      <VisionMission />
 
-      <section className="achievements">
-        <h1>ACHIEVEMENTS</h1>
-        <div className="achievements-content">
-          <div className="achievement-text">
-            <h2>
-              We love to help all the children that have problems in the world.
-              After 6 years we have many goals achieved.
-            </h2>
-            <div className="achievement-underline"></div>
-            <p>
-            We don't just see potential, we nuture it. We don't just build futures, we weave them together. This is Pehchaan Ek Safa transforming lives, hand in hand, weaving a brighter tomorrow, for everyone.
+      {/* 3. THE PROBLEMS WE ADDRESS */}
+      <ProblemsWeAddress />
 
-            </p>
+      {/* 4. WHAT WE DO */}
+      <WhatWeDoSection />
+
+      {/* 5. OUR IMPACT */}
+      <OurImpact />
+
+      {/* 6. MEET THE TEAM */}
+      <MeetTeamHome />
+
+      {/* 7. LATEST UPDATES */}
+      <LatestUpdates />
+
+      {/* 8. CONNECT WITH US */}
+      <ConnectWithUs />
+
+      {/* 9. TESTIMONIALS */}
+      <ScrollReveal direction="left">
+        <section className="testimonials-home-section" id="testimonials">
+          <div className="testimonials-home-header">
+            <span className="testimonials-kicker">VOICES OF PURPOSE</span>
+            <h2 className="testimonials-title">TESTIMONIALS</h2>
           </div>
-          <div className="achievement-stats">
-            <div className="achievement-icons">
-              <div className="lives-affected">
-                <img src={personIcon} className="lives-affected-icon"></img>
-                <h3>3K+</h3>
-                <p>Lives affected</p>
-              </div>
-              <div className="volunteer">
-                <img src={volunteerIcon} className="volunteer-icon"></img>
-                <h3>950</h3>
-                <p>volunteeres so far</p>
-              </div>
-              <div className="children-helped">
-                <img src={holdingHand} className="children-helped-icon"></img>
-                <h3>1K+</h3>
-                <p>Children helped</p>
-              </div>
+          <div className="testimonial-carousel">
+            <Slider {...settingsTestimonial} className="Testimonial-cards">
+              {testimonialData.map((item, index) => (
+                <div key={index}>
+                  <Testimonial2 {...item} />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* 10. FAQ SECTION */}
+      <section className="FAQ" id="faq-section">
+        <ScrollReveal direction="up">
+          <span className="faq-kicker">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 className="faq-title">FAQ</h2>
+        </ScrollReveal>
+        <div className="FAQ-container">
+          <ScrollReveal direction="left">
+            <div className="FAQitem">
+              <h3>1. What is Pehchaan Ek Safar?</h3>
+              <p>
+                Pehchaan Ek Safar is a registered non-profit organization by the students and faculty advisors of IIT Ropar dedicated to providing education and holistic upliftment to underprivileged children. We believe education is a fundamental right that can uplift entire communities.
+              </p>
             </div>
-            {/* <Link className="achievement-rdm-btn" to="/achievement">
-              Read More
-            </Link> */}
-          </div>
+          </ScrollReveal>
+
+          <ScrollReveal direction="right" delay={100}>
+            <div className="FAQitem">
+              <h3>2. How does Pehchaan Ek Safar help underprivileged children?</h3>
+              <p>
+                We provide free evening tuition classes, cover stationery and book expenses, sponsor formal school admissions into reputed schools (such as Navodaya, KV, and JNV), provide safe transportation, and conduct interactive STEM outreach workshops and career counselling sessions.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal direction="left" delay={150}>
+            <div className="FAQitem">
+              <h3>3. Who are the children you support?</h3>
+              <p>
+                We support children from marginalized neighbourhoods and economically weaker sections around Ropar and Punjab who lack access to quality educational resources and guidance.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal direction="right" delay={200}>
+            <div className="FAQitem">
+              <h3>4. How can I contribute or volunteer with PES?</h3>
+              <p>
+                You can contribute directly via our official UPI ID (9463737258@ybl), donate educational materials, or register as a student/community volunteer through our Join Us page. Every gesture of kindness creates real change.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      <section className="testimonials">
-        <h1>TESTIMONIAL</h1>
-      </section>
-
-      {/* Due to some bug the testimonial-carousel is not inside testimonial section and its has been keep seprate */}
-      <div className="testimonial-carousel">
-        <Slider {...settingsTestimonial} className="Testimonial-cards">
-          {testimonialData.map((item, index) => (
-            <div key={index}>
-              <Testimonial2 {...item} />
-            </div>
-          ))}
-        </Slider>
-      </div>
-      <div className="FAQ">
-        <h1 id="faq-section">FAQ</h1>
-        <div className="FAQitem"><h3>1. What is Pehchan Ek Safar?</h3>
-        <p>Pehchan Ek Safar is a non-profit organization dedicated to providing education to underprivileged children. We believe that education is a basic right and a powerful tool to lift children and their families out of poverty, creating better opportunities for a brighter future.</p>
-        <h3>2. How does Pehchan Ek Safar help underprivileged children?</h3>
-        <p>We provide quality education, school supplies, and a supportive learning environment for children who may not have access to traditional schooling. Our programs focus on both academic learning and life skills, aiming to nurture well-rounded individuals.</p>
-
-        <h3>3. Who are the children you support?</h3>
-        <p>We support children from marginalized communities who lack access to quality education due to economic or social constraints. These children are often first-generation learners, and Pehchan Ek Safar is committed to giving them the resources they need to thrive.</p>
-        <h3>4. How can I contribute to Pehchan Ek Safar?</h3>
-        <p>You can contribute by donating funds, school supplies, or volunteering your time. Every contribution, big or small, helps us reach more children and make a significant impact in their lives. For more information on how to donate or volunteer, please visit our Contribute page.</p>
-
-        </div>
-      </div>
-
-      
-
+      {/* Sticky Floating CTA Buttons */}
       <StickyJoinButton />
       <StickyDonateButton />
     </>

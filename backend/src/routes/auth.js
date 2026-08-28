@@ -28,19 +28,26 @@ router.post('/signup', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-  // get user data from request body
-  const _user = {
-    email: req.body.email,
-    password: req.body.password
-  };
-  // find user in database
-  let userFound = await user.findOne({ email: _user.email });
-  // if user not found, return error
+  const reqEmail = req.body?.email || req.body?.emailAddress || req.query?.email || "";
+  const reqPassword = req.body?.password || req.body?.pass || req.query?.password || "";
+  const emailClean = reqEmail.trim();
+
+  if (!emailClean) {
+    return res.status(404).send('User not found!');
+  }
+
+  // find user in database (case-insensitive)
+  let userFound = await user.findOne({
+    email: { $regex: new RegExp(`^${emailClean.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}$`, 'i') }
+  });
+  if (!userFound) {
+    userFound = await user.findOne({ email: emailClean });
+  }
   if (!userFound) {
     return res.status(404).send('User not found!');
   }
   // if user found, compare passwords
-  let passwordMatch = await user.comparePassword(userFound, _user.password);
+  let passwordMatch = await user.comparePassword(userFound, reqPassword);
   // if passwords don't match, return error
   if (!passwordMatch) {
     return res.status(401).send('Password does not match!');

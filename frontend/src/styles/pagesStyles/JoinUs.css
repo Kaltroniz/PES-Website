@@ -20,7 +20,7 @@
   text-align: center;
   font-family: Montserrat classic;
   font-size: 300%;
-  color: rgb(255, 102, 0);
+  color: var(--color-primary, #1e293b);
 }
 .subquote {
   text-align: justify;
@@ -79,20 +79,22 @@
   padding-left: 20px;
   padding-right: 20px;
   height: 60px;
-  border: 1px solid white;
-  border-radius: 6px;
+  border: none;
+  border-radius: 50px;
   box-sizing: border-box;  
-  background-color:orangered;
+  background: var(--color-cta-gradient, linear-gradient(135deg, #d97706, #f59e0b));
+  box-shadow: 0 4px 15px var(--color-btn-shadow, rgba(245, 158, 11, 0.45));
   color: white;
   cursor: pointer;
   font-size: medium;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
 }
 
 .joinus-submit:hover{
-  background-color: white;
-  border-color: orange;
-  color: black;
-  box-shadow: 3px 3px 5px black;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px var(--color-btn-shadow, rgba(245, 158, 11, 0.6));
+  color: white;
 }
 
 @media (max-width:767px)

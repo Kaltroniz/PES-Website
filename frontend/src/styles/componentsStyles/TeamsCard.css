@@ -19,11 +19,13 @@
 }
 
 .Card > img {
-    width: 200px;
-    height: auto;
+    width: 180px;
+    height: 180px;
+    aspect-ratio: 1 / 1;
     align-self: center;
     border-radius: 50%;
     object-fit: cover;
+    object-position: top center;
     margin-bottom: 12px;
 }
 

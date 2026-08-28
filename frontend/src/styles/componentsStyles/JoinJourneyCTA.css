@@ -1,0 +1,177 @@
+/* ==========================================================================
+   JOIN OUR JOURNEY CTA BANNER COMPONENT
+   ========================================================================== */
+
+.join-journey-section {
+  width: 100%;
+  padding: 4rem 1.5rem 5rem;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.join-journey-container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.join-journey-card {
+  position: relative;
+  background: #0d0f16;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 4.5rem 2rem 4rem;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.join-journey-glow {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 550px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.16) 0%, rgba(217, 119, 6, 0.04) 50%, transparent 75%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.join-journey-kicker {
+  display: block;
+  font-family: "Outfit", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #fbbf24;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.join-journey-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 46px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 2;
+}
+
+.join-journey-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 650px;
+  margin: 0 auto 2.8rem;
+  position: relative;
+  z-index: 2;
+}
+
+.join-journey-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+/* 1. Support Cause Amber/Gold Button */
+.btn-support-cause {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 16px;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(217, 119, 6, 0.45);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-support-cause:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 35px rgba(217, 119, 6, 0.6);
+  color: #ffffff;
+}
+
+.btn-icon-heart {
+  font-size: 16px;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.btn-support-cause:hover .btn-icon-heart {
+  transform: scale(1.2);
+}
+
+/* 2. Join as Volunteer Dark Outline Button */
+.btn-join-volunteer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 30px;
+  border-radius: 16px;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-join-volunteer:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-3px);
+  color: #ffffff;
+}
+
+.btn-icon-ext {
+  font-size: 14px;
+  color: #cbd5e1;
+  transition: transform 0.3s ease;
+}
+
+.btn-join-volunteer:hover .btn-icon-ext {
+  transform: translate(2px, -2px);
+  color: #ffffff;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+  .join-journey-card {
+    padding: 3rem 1.5rem;
+    border-radius: 20px;
+  }
+  .join-journey-title {
+    font-size: 32px;
+  }
+  .join-journey-subtitle {
+    font-size: 15.5px;
+  }
+  .join-journey-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-support-cause,
+  .btn-join-volunteer {
+    width: 100%;
+    justify-content: center;
+  }
+}

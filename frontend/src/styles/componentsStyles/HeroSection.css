@@ -1,107 +1,415 @@
 .hero-section {
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  min-height: 100vh;
+  width: 100%;
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 3%;
-}
-
-.hero-section-text {
-  color: white;
-  width: 50%;
-  margin-left: 10%;
-  font-family: "Montserrat", sans-serif;
+  position: relative;
   display: flex;
   flex-direction: column;
-  /* border: 2px red solid; */
+  justify-content: space-between;
+  padding: 135px 8% 65px 8%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.hero-section-text > h2 {
+/* Subtle top & bottom shadow gradient for crisp text legibility without dulling faces in the center */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 28%,
+    rgba(0, 0, 0, 0) 62%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   SHANTIDEVA QUOTE SLIDE (BLACK & GOLDEN LUXURY SLIDE)
+--------------------------------------------------------- */
+.hero-section.hero-quote-slide {
+  background: radial-gradient(circle at 50% 50%, #161e2e 0%, #090e17 55%, #020408 100%);
+  position: relative;
+  padding: 105px 7% 40px 7%;
+}
+
+.hero-section.hero-quote-slide::before {
+  background: radial-gradient(circle at 50% 50%, rgba(234, 179, 8, 0.08) 0%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* 1. Top-Left Corner (Sanskrit Shloka) */
+.quote-top-corner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sanskrit-container {
+  max-width: 650px;
+  text-align: left;
+  opacity: 0;
+}
+
+.sanskrit-container.typewriter-active,
+.english-quote-container.typewriter-active {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+.typewriter-caret {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background-color: #fbbf24;
+  margin-left: 5px;
+  vertical-align: middle;
+  border-radius: 2px;
+  animation: pesBlinkCaret 0.8s infinite;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.9);
+}
+
+@keyframes pesBlinkCaret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.shloka-kicker {
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-accent, #eab308);
+  margin-bottom: 8px;
+  text-shadow: 0 0 12px rgba(234, 179, 8, 0.4);
+}
+
+.sanskrit-text {
+  font-family: "Outfit", "Montserrat", sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-subheading, #fde047);
+  margin: 0 0 6px 0;
+  text-shadow: 0 0 24px rgba(250, 204, 21, 0.45), 0 2px 10px rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.5px;
+  min-height: 1.35em;
+}
+
+/* 2. Center Insignia & Logo */
+.quote-center-insignia {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.quote-iit-logo {
+  width: 135px !important;
+  height: 135px !important;
+  max-width: 135px !important;
+  max-height: 135px !important;
+  object-fit: contain;
+  filter: drop-shadow(0 0 22px rgba(250, 204, 21, 0.45)) drop-shadow(0 6px 20px rgba(0, 0, 0, 0.9));
+  transition: transform 0.4s ease;
+}
+
+/* 3. Bottom-Right Corner (English Translation) */
+.quote-bottom-corner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.english-quote-container {
+  max-width: 580px;
+  text-align: right;
+  opacity: 0;
+  margin-bottom: 10px;
+}
+
+.english-quote-line {
+  font-family: "Plus Jakarta Sans", "Montserrat", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  color: #fef08a;
+  margin: 0 0 4px 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 16px rgba(250, 204, 21, 0.3);
+  min-height: 1.5em;
+}
+
+.quote-author-tag {
+  display: block;
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-accent, #eab308);
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 14px rgba(234, 179, 8, 0.5);
+  min-height: 1.4em;
+}
+
+/* ---------------------------------------------------------
+   TOP AREA: STANDARD SLIDES
+--------------------------------------------------------- */
+.hero-top-area {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  background: transparent;
+}
+
+.hero-top-heading {
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 600%;
-  margin-bottom: -2%;
+  font-weight: 800;
+  font-size: 4.8rem;
+  line-height: 1.05;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.9);
+  letter-spacing: -1px;
+  opacity: 0;
+}
+
+/* ---------------------------------------------------------
+   BOTTOM AREA: STANDARD SLIDES
+--------------------------------------------------------- */
+.hero-bottom-area {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
 }
 
 .hero-subheading {
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 300%;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--color-subheading);
+  margin: 0 0 10px 0;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.95);
+  letter-spacing: -0.5px;
+  opacity: 0;
+  transition: color 0.3s ease;
 }
 
 .hero-para {
   font-family: "Montserrat", sans-serif;
-  font-size: 90%;
+  font-size: 0.96rem;
   font-weight: 400;
-  text-align: justify;
-  margin: 3% 0%;
-} 
+  text-align: left;
+  line-height: 1.6;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.95);
+  margin: 0 0 20px 0;
+  opacity: 0;
+}
 
 .hero-btns {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 3%;
-  margin: 3% 0%;
+  gap: 14px;
+  margin: 0;
+  opacity: 0;
 }
 
+/* ---------------------------------------------------------
+   CINEMATIC ANIMATIONS
+--------------------------------------------------------- */
+@keyframes pesDropFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-90px);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 0.9;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes pesRiseFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(85px);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 0.9;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes pesFadeInCenter {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.85);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Active Slide Trigger Animations */
+.slick-slide.slick-active .hero-top-heading,
+.slick-slide.slick-current .hero-top-heading,
+.slick-slide.slick-active .sanskrit-container,
+.slick-slide.slick-current .sanskrit-container {
+  animation: pesDropFromTop 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+  will-change: transform, opacity, filter;
+}
+
+.slick-slide.slick-active .quote-center-insignia,
+.slick-slide.slick-current .quote-center-insignia {
+  animation: pesFadeInCenter 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+  will-change: transform, opacity, filter;
+}
+
+.slick-slide.slick-active .hero-subheading,
+.slick-slide.slick-current .hero-subheading,
+.slick-slide.slick-active .english-quote-container,
+.slick-slide.slick-current .english-quote-container {
+  animation: pesRiseFromBottom 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  will-change: transform, opacity, filter;
+}
+
+.slick-slide.slick-active .hero-para,
+.slick-slide.slick-current .hero-para {
+  animation: pesRiseFromBottom 1s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+  will-change: transform, opacity, filter;
+}
+
+.slick-slide.slick-active .hero-btns,
+.slick-slide.slick-current .hero-btns {
+  animation: pesRiseFromBottom 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+  will-change: transform, opacity, filter;
+}
+
+/* BUTTON STYLES */
 .hero-donate-btn {
   text-decoration: none;
-  font-size: 90%;
+  font-size: 0.94rem;
+  font-weight: 700;
   color: white;
-  padding: 2% 5%;
+  padding: 12px 28px;
   border-radius: 30px;
-  background-color: orangered;
-  border: 1.8px orangered solid;
-  transition: 0.3s ease-in-out;
+  background: var(--color-cta-gradient, linear-gradient(135deg, #d97706, #f59e0b));
+  border: 1.8px solid transparent;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 18px var(--color-btn-shadow, rgba(245, 158, 11, 0.45));
 }
 
 .hero-donate-btn:hover {
   background: transparent;
-  transition: 0.3s ease-in-out;
-
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--color-btn-shadow, rgba(245, 158, 11, 0.65));
+  color: #ffffff;
 }
 
 .hero-rdm-btn {
   text-decoration: none;
-  font-size: 90%;
+  font-size: 0.94rem;
+  font-weight: 700;
   color: white;
-  padding: 2% 5%;
+  padding: 12px 28px;
   border-radius: 30px;
-  border: 1.8px orangered solid;
-  background-color: transparent;
-  transition: 0.3s ease-in-out;
+  border: 1.8px solid rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 .hero-rdm-btn:hover {
-  background-color: orangered;
-  transition: 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
+  transform: translateY(-2px);
 }
 
+/* RESPONSIVE DESIGN */
 @media only screen and (max-width: 1030px) {
   .hero-section {
-    width: 100vw;
+    padding: 110px 6% 40px 6%;
   }
 
-  .hero-section-text {
-    margin-bottom: 40%;
-    width: 80%;
-    margin-left: 5%;
+  .sanskrit-text {
+    font-size: 1.6rem;
   }
 
-  .hero-section-text > h2 {
-    font-size: 300%;
+  .english-quote-line {
+    font-size: 1rem;
+  }
+
+  .insignia-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero-top-heading {
+    font-size: 3.2rem;
   }
 
   .hero-subheading {
-    font-size: 200%;
-    margin-bottom: 3%;
+    font-size: 1.6rem;
   }
 
-  .hero-btns {
-    margin-top: 8%;
+  .hero-bottom-area {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .sanskrit-text {
+    font-size: 1.25rem;
+  }
+
+  .english-quote-line {
+    font-size: 0.9rem;
+  }
+
+  .quote-center-insignia {
+    display: none;
   }
 }

@@ -11,23 +11,21 @@ function CompetitionsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    request.get(`${import.meta.env.VITE_API_BASE}/events/list?type=competitions`)
+    request.get(`${import.meta.env.VITE_API_BASE}/events/list?type=letstalk`)
       .then(res => res.json())
       .then(data => {
         setEvents(data);
-        // alert("Competitions events fetched successfully");
-        console.log("Competitions events fetched successfully");
+        console.log("Let's Talk events fetched successfully");
       })
       .catch(err => console.log(err))
       .finally(() => setLoading(false)); 
   }, []);
 
-  // if(events.length == 0) return <>Loading</>;
   return (
     <>
     <Hero
       heroSliderImages={[heroImg]}
-      heroHeading="Competitions"
+      heroHeading="Let's Talk"
     />
       <Events>
         {events.length ? events.map(event => (
@@ -39,7 +37,7 @@ function CompetitionsPage() {
             description={event.description}
             id={event._id}
           />
-        )) : <><br/><br/><h1>No Competitions Events available...</h1></>}
+        )) : <><br/><br/><h1>No Let's Talk Events available...</h1></>}
       </Events>
       {loading && <><br/><br/><h1>Loading ...</h1></>} 
     </>

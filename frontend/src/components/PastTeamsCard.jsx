@@ -1,13 +1,22 @@
-import "../styles/componentsStyles/PastTeamsCard.css"
-import mailIcon from "../assets/mail-icon.png"
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/componentsStyles/PastTeamsCard.css";
 
 function PastTeamsCard(props){
     return(
         <div className="PastTeamCard">
             <h4>Governing Body <br></br> {props.year}</h4>
-            <a href={props.link}><button className="PastTeamCardButton" type="button">View</button></a>
+            {props.to ? (
+                <Link to={props.to}>
+                    <button className="PastTeamCardButton" type="button">View</button>
+                </Link>
+            ) : (
+                <a href={props.link} target="_blank" rel="noopener noreferrer">
+                    <button className="PastTeamCardButton" type="button">View</button>
+                </a>
+            )}
         </div>
-    )
+    );
 }
 
-export default PastTeamsCard
+export default PastTeamsCard;

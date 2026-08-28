@@ -13,14 +13,14 @@
 }
 
 .OurTeam > h1 {
-  /* color: rgb(255,102,0); */
   font-size: 40px;
-  font-weight: 300;
+  font-weight: 600;
   padding: 5px;
   text-align: center;
+  color: var(--color-primary, #1e3a8a);
   text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-decoration-color: rgb(255, 102, 0);
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-accent, #06b6d4);
   text-underline-offset: 0.3em;
 }
 
@@ -31,7 +31,6 @@
   padding-right: 18%;
   justify-content: space-evenly;
   flex-flow: row wrap;
-  /* border: 2px red solid; */
 }
 
 .LinkForPastTeams {
@@ -45,25 +44,23 @@
   margin-top: 3%;
   margin-bottom: 5%;
   text-align: center;
-  padding: 20px 30px;
+  padding: 16px 36px;
   color: white;
-  /* background-color: rgb(255,102,0); */
-  background-color: black;
-  border: none;
+  background: var(--color-primary-dark, #0f172a);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
   border-radius: 50px;
   text-decoration: none;
   display: inline-block;
-  font-size: 25px;
-  font-weight: 300;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: 0.2s all ease-in-out;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.3);
+  transition: all 0.3s ease-in-out;
 }
 
 .PastTeamsButton:hover {
-  /* color: rgb(255,102,0); */
-  background-color: rgb(255, 102, 0);
-  transform: scale(1.005);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  background: var(--color-cta-gradient, linear-gradient(135deg, #2563eb, #06b6d4));
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px var(--color-btn-shadow, rgba(37, 99, 235, 0.5));
 }
 
 @media screen and (max-width: 550px)  {

@@ -11,16 +11,15 @@ export default function ManageEventsPage(){
 
     const fetchEvents = async () => {
       setLoading(true);
-      const response = await request.get(`${import.meta.env.VITE_API_BASE}/events/list`)
-      const json = await response.json()
-
-      if(response.ok && events != json){
-        setEvents(json)
-        alert("Events fetched successfully");
-      } else {
-        alert("Error fetching events, Please try again later.");
+      try {
+        const response = await request.get(`${import.meta.env.VITE_API_BASE}/events/list`);
+        if (response.ok) {
+          const json = await response.json();
+          setEvents(json);
+        }
+      } catch (err) {
+        console.error(err);
       }
-
       setLoading(false);
     }
     

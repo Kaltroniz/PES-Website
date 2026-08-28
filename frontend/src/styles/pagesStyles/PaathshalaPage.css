@@ -1,232 +1,959 @@
-.paathshala-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
-    padding-top: 3%;
+/* ==========================================================================
+   PAATHSHALA PAGE STYLES - GOLDEN & SLATE MODERN THEME
+   ========================================================================== */
+
+.paathshala-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
-.paathshala-content > img {
-    width: 450px;
-    border-radius: 10px;
+.paathshala-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
-.paathshala-content > p {
-    width: 40%;
-    text-align: justify;
-    font-family: "Montserrat", sans-serif;
-    line-height: 1.8;
+/* --------------------------------------------------------------------------
+   STATS BAR
+   -------------------------------------------------------------------------- */
+.paathshala-stats-bar {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: 2rem 1.5rem;
 }
 
-@media screen and (max-width: 500px) {
-    .paathshala-content {
-       flex-direction: column;
-       gap: 30px;
-       padding-top: 8%;
-       padding-bottom: 8%;
-    }
-
-    .paathshala-content > img {
-        width: 80%;
-    }
-    
-    .paathshala-content > p {
-        width: 80%;
-    }
+/* --------------------------------------------------------------------------
+   1. HERO BANNER WITH BACKGROUND CROSSFADE SLIDESHOW
+   -------------------------------------------------------------------------- */
+.paathshala-hero {
+  position: relative;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 7rem 1.5rem 5.5rem;
+  overflow: hidden;
+  background-color: #090d16;
 }
 
-/* .main{
-    overflow:scroll;
+.paathshala-hero-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-::-webkit-scrollbar {
-    width: 15px;
-    }
-    ::-webkit-scrollbar-track {
-    background: #f6f6f4;
-    }
-    ::-webkit-scrollbar-thumb {
-    background: #86af49;
-    } 
-    ::-webkit-scrollbar-thumb:hover {
-    Background: #E5cdbc
+.paathshala-hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.carousel {
-    width : 90%;
-    margin-top : 2%;
-    padding-bottom: 0%;
-    margin-left: 10%;
-}
-.body1text{
-    width:90%;
-    font-size: 16px;
-    padding: 0px 23px;
-    font-family: "Montserrat", sans-serif;
-    text-align: justify;
+.paathshala-hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.body2{ 
-    margin-left:20px ;
-    background-color: aliceblue;
+.paathshala-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.38) 0%,
+    rgba(9, 13, 22, 0.48) 50%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+  z-index: 2;
 }
-.subbutton{
-    width : 95%;
-    height : 50px;
-    background-color: #FDCD6F; 
+
+.paathshala-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 920px;
+  margin: 0 auto;
 }
-.button {
-    background-color: rgb(255,102,0);
-    border-radius: 10px;
-    border: 2px solid red;
-    box-shadow: 0 9px #999;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    float: left;
-    height: 35px;
-    width: 170px;
-    font-family: Algerian;
-    font-size: 20px;
-    margin-top: 7px;
-    margin-left: 18px;   
+
+.paathshala-hero-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 62px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin: 0 0 1.5rem 0;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9), 0 2px 8px rgba(0, 0, 0, 0.95);
 }
-.button:hover{
-    background-color:black;
-    color:white;
+
+.paathshala-title-sub {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fbbf24;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
 }
-.location{
-    width: 95%;
-    height: 300px;
+
+.paathshala-hero-lead {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.75;
+  color: #ffffff;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.95), 0 1px 6px rgba(0, 0, 0, 0.95);
 }
-.text2{
-    width: 90%;    
+
+.paathshala-hero-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.paathshala-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #d97706;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1.5px solid #fbbf24;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.4);
+}
+
+.paathshala-btn-primary:hover {
+  background: #b45309;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.55);
+}
+
+.paathshala-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.paathshala-btn-secondary:hover {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.paathshala-hero-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.hero-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.hero-dot.active {
+  width: 32px;
+  border-radius: 12px;
+  background: #fbbf24;
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   2. OVERVIEW
+   -------------------------------------------------------------------------- */
+.paathshala-story-section {
+  padding: 5.5rem 0;
+  background: #ffffff;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.section-kicker {
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #d97706;
+  margin-bottom: 8px;
+}
+
+.section-heading {
+  font-family: "Outfit", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.5px;
+}
+
+.story-para {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #334155;
+  margin-bottom: 1.25rem;
+}
+
+.story-highlight-para {
+  color: #0f172a;
+  border-left: 3.5px solid #d97706;
+  padding-left: 16px;
+  margin-top: 1.5rem;
+  font-size: 16.5px;
+}
+
+.story-carousel-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  height: 400px;
+  background: #0f172a;
+}
+
+.story-slides-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.story-slide-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.8s ease, transform 1.2s ease;
+  pointer-events: none;
+}
+
+.story-slide-item.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.story-carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.story-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.7);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+}
+
+.story-carousel-container:hover .story-nav-btn {
+  opacity: 1;
+}
+
+.story-prev-btn {
+  left: 14px;
+}
+
+.story-next-btn {
+  right: 14px;
+}
+
+.story-nav-btn:hover {
+  background: #d97706;
+  border-color: #fbbf24;
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.story-dots-wrap {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.story-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.story-dot.active {
+  width: 22px;
+  border-radius: 10px;
+  background: #fbbf24;
+}
+
+/* --------------------------------------------------------------------------
+   3. WHAT WE DO (PAATHSHALA) - DARK GLASS LUXURY CARDS
+   -------------------------------------------------------------------------- */
+.paathshala-pillars-section {
+  padding: 6rem 0;
+  background: #090d16;
+  color: #ffffff;
+}
+
+.paathshala-pillars-section .section-heading {
+  color: #ffffff;
+}
+
+.paathshala-pillars-section .section-subtext {
+  color: #94a3b8;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.pillar-card-wrapper {
+  height: 100%;
+}
+
+.dark-glass-pillar-card {
+  position: relative;
+  background: linear-gradient(145deg, #131b2e 0%, #090d16 100%);
+  border: 1.5px solid rgba(234, 179, 8, 0.3);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 34px 28px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.dark-glass-pillar-card .pillar-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(234, 179, 8, 0.15);
+  color: #fde047;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.dark-glass-pillar-card .pillar-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.3px;
+}
+
+.dark-glass-pillar-card .pillar-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.dark-glass-pillar-card:hover {
+  transform: translateY(-8px);
+  border-color: #fbbf24;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(251, 191, 36, 0.25);
+  background: linear-gradient(145deg, #1a253e 0%, #0c1424 100%);
+}
+
+.dark-glass-pillar-card:hover .pillar-icon-box {
+  background: #d97706;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+/* --------------------------------------------------------------------------
+   4. OUR INITIATIVES
+   -------------------------------------------------------------------------- */
+.paathshala-initiatives-section {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.initiatives-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.initiative-row-wrapper {
+  width: 100%;
+}
+
+.initiative-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.initiative-row:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+  border-color: #cbd5e1;
+}
+
+.initiative-reverse .initiative-img-box {
+  order: 2;
+}
+
+.initiative-reverse .initiative-info-box {
+  order: 1;
+}
+
+.initiative-img-box {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  height: 300px;
+}
+
+.initiative-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: transform 0.4s ease;
+}
+
+.initiative-row:hover .initiative-img-box img {
+  transform: scale(1.03);
+}
+
+.initiative-tag {
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d97706;
+  background: #fef3c7;
+  padding: 4px 12px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.initiative-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.3px;
+}
+
+.initiative-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #475569;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. FOUR PAATHSHALA CENTERS
+   -------------------------------------------------------------------------- */
+.paathshala-centers-section {
+  padding: 5.5rem 0;
+  background: #090d16;
+  color: #ffffff;
+}
+
+.paathshala-centers-section .section-heading {
+  color: #ffffff;
+}
+
+.paathshala-centers-section .section-subtext {
+  color: #94a3b8;
+}
+
+.centers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.center-card-wrapper {
+  height: 100%;
+}
+
+.center-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(234, 179, 8, 0.25);
+  border-radius: 18px;
+  padding: 28px 22px;
+  height: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.center-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #fbbf24;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.center-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.center-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(234, 179, 8, 0.15);
+  color: #fde047;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.center-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. CALL TO ACTION
+   -------------------------------------------------------------------------- */
+.paathshala-cta-section {
+  padding: 5rem 0 6rem;
+  background: #f8fafc;
+}
+
+.paathshala-cta-box {
+  background: linear-gradient(135deg, #18181b 0%, #09090b 100%);
+  border: 1.5px solid rgba(234, 179, 8, 0.4);
+  border-radius: 26px;
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.paathshala-cta-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 30%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.cta-kicker {
+  display: inline-block;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #fbbf24;
+  margin-bottom: 10px;
+}
+
+.cta-heading {
+  font-family: "Outfit", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.5px;
+}
+
+.cta-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #d4d4d8;
+  max-width: 680px;
+  margin: 0 auto 2.2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.cta-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #d97706;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1.5px solid #fbbf24;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.35);
+}
+
+.cta-btn-gold:hover {
+  background: #b45309;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.5);
+}
+
+.cta-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.25s ease;
+}
+
+.cta-btn-outline:hover {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .centers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-img-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .paathshala-hero {
+    padding: 5.5rem 1rem 4rem;
+    min-height: 480px;
+  }
+
+  .paathshala-hero-title {
+    font-size: 42px;
+  }
+
+  .paathshala-title-sub {
     font-size: 19px;
-    padding : 15px 15px;
-    font-family: "Montserrat", sans-serif;
-    float:left;
-    text-align: justify;
+  }
+
+  .section-heading {
+    font-size: 30px;
+  }
+
+  .initiative-row {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .initiative-reverse .initiative-img-box {
+    order: 1;
+  }
+
+  .initiative-reverse .initiative-info-box {
+    order: 2;
+  }
+
+  .initiative-img-box {
+    height: 240px;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .centers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .paathshala-cta-box {
+    padding: 40px 20px;
+  }
+
+  .cta-heading {
+    font-size: 28px;
+  }
 }
 
-@media only screen and (min-width: 1000px) {
-    .body1 {
-        width:100%;
-        margin-left: 5px;
-    }
-    .carousel {
-        width : 45%;
-        float: right;
-        padding-right: 0.5%;
-        height: 400px;
-    }
-    .heading {
-        font-size: 45px;
-        font-family:edo;
-        padding-left: 160px;
-        padding-top: 20px;
-        padding-bottom: 10px;
-        text-shadow: 5px;
-        text-decoration: underline;
-        text-align: left;
-    }
-    .body1text{
-        width:100%;
-        font-size: 20px;
-        padding: 0px 50px;
-        text-align: justify;
-        font-family: "Montserrat", sans-serif;
-    }
-     
-    .subbutton{
-        width : 100%;
-        height : 50px;
-        background-color: #FDCD6F; 
-    }
-    .button {
-        background-color: rgb(255,102,0);
-        border-radius: 10px;
-        border: 2px solid red;
-        box-shadow: 0 9px #999;
-        text-align: center;
-        font-size: 16px;
-        cursor: pointer;
-        float: left;
-        height: 35px;
-        width: 170px;
-        font-family: "Montserrat", sans-serif;
-        font-size: 20px;
-        margin-top: 7px;
-        margin-left: 25px;   
-    }
-    .button:hover{
-        background-color:black;
-        color:white;
-    }
-    .text2{
-        width: 40%;
-        font-size: 25px;
-        padding : 15px 30px;
-        font-family: "Montserrat", sans-serif;
-        text-align: justify;
-        float:left;
-    }
-    .body2{ 
-        margin-top: 20px;
-        background-color:#E0FAFC;
-        margin-left:20px;   
-        height:400px;
-    }
-    .location{
-        width: 50%;
-        float:left;
-        padding-top: 1.5%;
-    }
-    
+/* --------------------------------------------------------------------------
+   6. DUAL-ROW INFINITE FLOATING REEL & SPOTLIGHT MODAL (IDEA 3)
+   -------------------------------------------------------------------------- */
+.paathshala-reel-section {
+  padding: 5.5rem 0 6rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 50%, #f8fafc 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-@media only screen and (min-width: 2000px) {
-    .body1 {
-        width:100%;
-        margin-left: 5px;
-    }
-    .carousel {
-        width : 45%;
-        float: right;
-        padding-right: 0.5%;
-    }
-    .body1text{
-        width:70%;
-        font-size: 30px;
-        padding: 0px 39px;
-        margin-left: 30px;
-        text-align: justify;
-    }
-    .img{
-        width: 500px;
-        height: 500px;
-    }
-    .text2{
-        width: 40%;
-        font-size: 35px;
-        padding : 15px 30px;
-        font-family:josefin sans std ;
-        text-align: justify;
-        float:left;
-    }
-    .location{
-        width: 40%;
-        float:left;
-        margin-left: 4%;
+.reel-wrapper {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  position: relative;
+}
 
-    }
-    .heading {
-        font-size: 65px;
-        font-family:edo;
-        padding-left: 160px;
-        padding-top: 20px;
-        padding-bottom: 10px;
-        text-shadow: 5px;
-        text-decoration: underline;
-        text-align: left;
-    }
-} */
+/* Gradient edge masks to fade left and right edges smoothly */
+.reel-wrapper::before,
+.reel-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.reel-wrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, #f8fafc 0%, transparent 100%);
+}
+
+.reel-wrapper::after {
+  right: 0;
+  background: linear-gradient(270deg, #f8fafc 0%, transparent 100%);
+}
+
+.reel-row {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+}
+
+.reel-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.reel-row-left .reel-track {
+  animation: marqueeLeft 42s linear infinite;
+}
+
+.reel-row-right .reel-track {
+  animation: marqueeRight 42s linear infinite;
+}
+
+/* Pause on hover */
+.reel-row:hover .reel-track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.reel-card {
+  flex-shrink: 0;
+  width: 320px;
+  height: 220px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12),
+              0 8px 10px -6px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  background: #ffffff;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease;
+}
+
+.reel-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 18px 30px -8px rgba(0, 0, 0, 0.18);
+}
+
+.reel-img-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.reel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .reel-card {
+    width: 260px;
+    height: 180px;
+  }
+}
