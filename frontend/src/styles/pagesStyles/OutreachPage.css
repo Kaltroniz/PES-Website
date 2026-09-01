@@ -99,7 +99,7 @@
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-weight: 500;
-  color: #fbbf24;
+  color: #4ade80;
   margin-top: 8px;
   letter-spacing: 0.5px;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
@@ -128,7 +128,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #d97706;
+  background: #16a34a;
   color: #ffffff;
   font-family: "Outfit", sans-serif;
   font-size: 15px;
@@ -136,15 +136,15 @@
   padding: 13px 28px;
   border-radius: 12px;
   text-decoration: none;
-  border: 1.5px solid #fbbf24;
+  border: 1.5px solid #4ade80;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.4);
+  box-shadow: 0 4px 16px rgba(22, 163, 74, 0.4);
 }
 
 .outreach-btn-primary:hover {
-  background: #b45309;
+  background: #15803d;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.55);
+  box-shadow: 0 8px 24px rgba(22, 163, 74, 0.55);
 }
 
 .outreach-btn-secondary {
@@ -201,9 +201,23 @@
 .hero-dot.active {
   width: 32px;
   border-radius: 12px;
-  background: #fbbf24;
-  box-shadow: 0 0 14px rgba(251, 191, 36, 0.85);
+  background: #4ade80;
+  box-shadow: 0 0 14px rgba(74, 222, 128, 0.85);
 }
+
+.stat-number {
+  font-family: "Outfit", sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: #16a34a;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.stat-box:nth-child(1) .stat-number { color: #16a34a; }
+.stat-box:nth-child(3) .stat-number { color: #0d9488; }
+.stat-box:nth-child(5) .stat-number { color: #f97316; }
+.stat-box:nth-child(7) .stat-number { color: #0f172a; }
 
 /* --------------------------------------------------------------------------
    2. STATS BAR
@@ -506,40 +520,40 @@
   margin: 0;
 }
 
-/* --- THEME 1: SCIENCE OUTREACH (Electric Indigo / Sapphire) --- */
+/* --- THEME 1: SCIENCE OUTREACH (Teal Blue) --- */
 .focus-card.theme-science {
-  border-top-color: #4f46e5;
+  border-top-color: var(--color-teal, #0d9488);
 }
 
 .focus-card.theme-science:hover {
-  border-color: #c7d2fe;
-  border-top-color: #4338ca;
-  box-shadow: 0 16px 36px rgba(79, 70, 229, 0.12);
+  border-color: #99f6e4;
+  border-top-color: #0f766e;
+  box-shadow: 0 16px 36px var(--color-teal-glow);
 }
 
 .focus-card.theme-science .focus-icon-box {
-  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
-  color: #4338ca;
-  border: 1px solid #c7d2fe;
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+  color: #0f766e;
+  border: 1px solid #99f6e4;
 }
 
 .focus-card.theme-science .focus-tag {
-  color: #4338ca;
-  background: #eef2ff;
-  border: 1px solid #c7d2fe;
+  color: #0f766e;
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
 }
 
 .focus-card.theme-science .focus-desc strong {
-  font-weight: 600;
-  color: #1e1b4b;
-  background: rgba(99, 102, 241, 0.08);
+  font-weight: 700;
+  color: #115e59;
+  background: rgba(13, 148, 136, 0.1);
   border-radius: 4px;
-  padding: 1px 4px;
+  padding: 1px 5px;
 }
 
 .focus-card.theme-science:hover .focus-desc strong {
-  background: rgba(99, 102, 241, 0.16);
-  color: #312e81;
+  background: rgba(13, 148, 136, 0.2);
+  color: #042f2e;
 }
 
 /* --- THEME 2: HEALTH OUTREACH (Rose / Coral / Warm Crimson) --- */

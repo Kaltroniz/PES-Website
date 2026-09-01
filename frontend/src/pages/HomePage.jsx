@@ -49,35 +49,35 @@ const heroData = [
     heading: "Education",
     subheading: "for underprivileged",
     description:
-      "Shaping Identities, Redefining Education: Pehchaan empowers young minds, nurturing their potential to build a brighter tomorrow. We strive to redefine education, fostering personal growth and creating a positive impact on the identities of the individuals we serve.",
+      "Empowering young minds and redefining education to build a brighter, dignified tomorrow for underprivileged children.",
   },
   {
     img: Hero_2,
     heading: "Education",
     subheading: "for underprivileged",
     description:
-      "Paathshala provides daily tuition classes for economically challenged children. We also support their admission into esteemed institutions such as KV, JNV and Navodaya, ensuring access to quality education. Our mission is to empower every child and break barriers for a brighter future.",
+      "Providing free daily tuition classes and sponsoring formal admissions into premier institutions like KV, JNV & Navodaya.",
   },
   {
     img: Hero_3,
     heading: "Mentorship",
     subheading: "Sparking Curiosity",
     description:
-      "Outreach: Fostering scientific temper and financial literacy in Ropar's students through career counseling sessions, seminars, and workshops. We engage with both private and government schools, empowering students for a knowledge-rich and financially informed future.",
+      "Fostering scientific temper, STEM innovation, and financial literacy through interactive school workshops and career counseling.",
   },
   {
     img: Hero_4,
     heading: "Raising",
     subheading: "The Bar",
     description:
-      "Atal Tinkering Labs: Extending beyond classrooms, we empower through ATLs, training teachers and fostering innovation. Our commitment is to cultivate a culture of creativity, preparing students for a dynamic future.",
+      "Cultivating a culture of innovation through Atal Tinkering Labs (ATL), hands-on experiments, and teacher empowerment.",
   },
   {
     img: Hero_5,
     heading: "School Safar",
     subheading: "Saathi (SSS)",
     description:
-      "Empowering meritorious students in financial adversity through resources and mentorship. We conduct fair tests and interviews to ensure a transparent selection process, nurturing their academic journey and future success.",
+      "Supporting meritorious students in financial adversity through direct educational sponsorships, resources, and mentorship.",
   },
 ];
 

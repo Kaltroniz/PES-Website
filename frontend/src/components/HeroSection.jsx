@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../styles/componentsStyles/HeroSection.css";
 import { Link as RouterLink } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import iitRoparLogo from "../assets/iit_ropar_logo_gold_crisp.png";
+import iitRoparLogo from "../assets/iit_ropar_logo_hd_official.png";
+import pesLogo from "../assets/peslogo.png";
 
 const SANSKRIT_KICKER = "॥ शान्तिदेवकृत बोधिचर्यावतार ॥";
 const SANSKRIT_LINE_1 = "अनाथानामहं नाथः सार्थवाहश्च यायिनाम् ।";
@@ -162,13 +163,12 @@ function TypewriterQuote() {
         </div>
       </div>
 
-      {/* Center: Clean Transparent Golden IIT Ropar Emblem */}
+      {/* Center: Pehchaan Ek Safar Logo Insignia */}
       <div className="quote-center-insignia">
         <img
-          src={iitRoparLogo}
-          alt="Indian Institute of Technology Ropar"
-          className="quote-iit-logo"
-          style={{ width: "135px", height: "135px", maxWidth: "135px", maxHeight: "135px", objectFit: "contain" }}
+          src={pesLogo}
+          alt="Pehchaan Ek Safar Logo"
+          className="quote-brand-logo pehchaan-insignia-logo"
         />
       </div>
 

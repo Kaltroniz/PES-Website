@@ -3,25 +3,45 @@
    ========================================================= */
 
 :root {
-  /* Imperial Champagne Gold & Midnight Slate */
-  --color-primary: #1e293b;
-  --color-primary-dark: #0f172a;
-  --color-accent: #eab308;
-  --color-accent-hover: #ca8a04;
-  --color-subheading: #fde047;
-  --color-cta: #d97706;
-  --color-cta-hover: #b45309;
-  --color-cta-gradient: linear-gradient(135deg, #d97706, #f59e0b);
-  --color-btn-shadow: rgba(245, 158, 11, 0.45);
-  --color-badge-bg: rgba(234, 179, 8, 0.14);
-  --color-badge-border: rgba(234, 179, 8, 0.4);
-  --color-badge-text: #b45309;
-  --color-card-border: rgba(234, 179, 8, 0.25);
-  --color-hero-accent: #fef08a;
+  /* Pehchaan Brand Palette (Teal Blue, Leaf Green, Sunrise Orange, Charcoal Black) */
+  --color-primary: #0f172a;
+  --color-primary-dark: #020617;
+  
+  --color-accent: #0d9488;
+  --color-accent-hover: #0f766e;
+  --color-subheading: #2dd4bf;
+  
+  --color-cta: #f97316;
+  --color-cta-hover: #ea580c;
+  --color-cta-gradient: linear-gradient(135deg, #f97316, #d97706);
+  
+  --color-btn-shadow: rgba(249, 115, 22, 0.4);
+  --color-badge-bg: rgba(13, 148, 136, 0.12);
+  --color-badge-border: rgba(13, 148, 136, 0.35);
+  --color-badge-text: #0d9488;
+  --color-card-border: rgba(13, 148, 136, 0.2);
+  --color-hero-accent: #99f6e4;
+
+  /* Pehchaan Core Palette Tokens */
+  --color-teal: #0d9488;
+  --color-teal-light: #14b8a6;
+  --color-teal-glow: rgba(13, 148, 136, 0.25);
+  --color-teal-gradient: linear-gradient(135deg, #0d9488, #06b6d4);
+  
+  --color-green: #16a34a;
+  --color-green-light: #22c55e;
+  --color-green-glow: rgba(22, 163, 74, 0.25);
+  --color-green-gradient: linear-gradient(135deg, #16a34a, #10b981);
+  
+  --color-orange: #f97316;
+  --color-orange-glow: rgba(249, 115, 22, 0.25);
+  --color-orange-gradient: linear-gradient(135deg, #f97316, #fb923c);
+
+  --color-charcoal: #0f172a;
 
   font-family: 'Montserrat', sans-serif;
   color-scheme: light;
-  color: #1e293b;
+  color: #0f172a;
   background-color: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,6 +49,65 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+/* Pehchaan Palette Utility Badges & Kickers */
+.kicker-teal {
+  color: var(--color-teal) !important;
+}
+.kicker-green {
+  color: var(--color-green) !important;
+}
+.kicker-orange {
+  color: var(--color-orange) !important;
+}
+
+.badge-teal {
+  background: rgba(13, 148, 136, 0.12) !important;
+  color: #0d9488 !important;
+  border: 1px solid rgba(13, 148, 136, 0.35) !important;
+}
+
+.badge-green {
+  background: rgba(22, 163, 74, 0.12) !important;
+  color: #16a34a !important;
+  border: 1px solid rgba(22, 163, 74, 0.35) !important;
+}
+
+.badge-orange {
+  background: rgba(249, 115, 22, 0.12) !important;
+  color: #ea580c !important;
+  border: 1px solid rgba(249, 115, 22, 0.35) !important;
+}
+
+/* Universal Multi-Color Palette Gradient Utilities */
+.pes-gradient-text {
+  background: linear-gradient(135deg, #0d9488 0%, #16a34a 45%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pes-multi-underline {
+  text-decoration: none !important;
+  position: relative;
+  display: inline-block;
+}
+
+.pes-multi-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #0d9488 0%, #16a34a 50%, #f97316 100%);
+}
+
+.text-teal { color: #0d9488 !important; }
+.text-green { color: #16a34a !important; }
+.text-orange { color: #f97316 !important; }
+.text-charcoal { color: #0f172a !important; }
 
 html, body {
   margin: 0px;

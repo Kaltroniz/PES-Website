@@ -13,7 +13,7 @@
 .StickyDonateButton {
   position: fixed;
   color: white;
-  background: var(--color-cta-gradient, linear-gradient(135deg, #d97706, #f59e0b));
+  background: linear-gradient(135deg, #f97316, #ea580c);
   font-family: "Montserrat", sans-serif;
   font-size: 92%;
   font-weight: 700;
@@ -23,7 +23,7 @@
   padding: 12px 24px;
   bottom: 22px;
   right: 22px;
-  box-shadow: 0 10px 25px var(--color-btn-shadow, rgba(245, 158, 11, 0.45));
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.45);
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
   z-index: 999;
   text-decoration: none;
@@ -35,7 +35,7 @@
   color: white;
   animation-play-state: paused;
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 16px 32px var(--color-btn-shadow, rgba(245, 158, 11, 0.65));
+  box-shadow: 0 16px 32px rgba(249, 115, 22, 0.65);
 }
 
 @media only screen and (max-width: 1000px) {

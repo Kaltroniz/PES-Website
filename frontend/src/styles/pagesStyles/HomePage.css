@@ -25,11 +25,11 @@
   text-align: center;
   font-size: 65px;
   font-weight: 600;
-  color: var(--color-primary, #1e293b);
+  color: var(--color-primary, #0f172a);
   text-decoration: underline;
-  text-decoration-color: var(--color-accent, #eab308);
+  text-decoration-color: var(--color-accent, #0d9488);
   text-underline-offset: 20px;
-  text-decoration-thickness: 2.5px;
+  text-decoration-thickness: 3px;
   margin-bottom: 3%;
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
@@ -52,7 +52,7 @@
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #d97706;
+  color: #f97316;
   margin-bottom: 6px;
 }
 
@@ -63,7 +63,7 @@
   font-weight: 600;
   color: #0f172a;
   text-decoration: underline;
-  text-decoration-color: #eab308;
+  text-decoration-color: #0d9488;
   text-underline-offset: 16px;
   text-decoration-thickness: 3px;
   margin: 0 0 2.5rem 0;
@@ -89,9 +89,9 @@
 }
 
 .FAQitem:hover {
-  border-color: #f59e0b;
-  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.1);
-  background: #fffdfa;
+  border-color: #0d9488;
+  box-shadow: 0 8px 24px rgba(13, 148, 136, 0.12);
+  background: #f0fdfa;
 }
 
 .FAQitem > h3 {

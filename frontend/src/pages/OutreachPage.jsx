@@ -293,19 +293,10 @@ function OutreachPage() {
                 Taking Learning Beyond the Classroom
               </h2>
               <p className="story-para">
-                Our Outreach programme brings interactive learning experiences to
-                government schools and colleges, inspiring students to think
-                critically, stay curious, and develop a scientific temperament.
-                Through engaging talks, demonstrations, hands-on activities, and
-                workshops led by IIT Ropar student volunteers, we bridge the gap
-                between classroom learning and real-world applications while
-                encouraging scientific inquiry and informed decision-making.
+                Our Outreach programme brings <strong>hands-on STEM learning</strong>, <strong>experiential workshops</strong>, and <strong>interactive mentorship</strong> to government schools and colleges across Ropar and Punjab.
               </p>
               <p className="story-para">
-                We bring the joy of learning to life through hands-on learning,
-                demonstrative learning, and experiential learning. This encompasses
-                our interactive sessions, mentorship, teacher training programs,
-                and career counselling to help students chart their own paths.
+                Led by <strong>IIT Ropar student volunteers</strong>, we inspire scientific temperament, conduct teacher training, and provide career counselling to bridge the gap between classroom theory and real-world innovation.
               </p>
             </ScrollReveal>
 

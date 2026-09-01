@@ -22,20 +22,17 @@ const WhatWeDoSection = () => {
       <div className="wwd-grid">
         {/* Paathshala Card - Slide from Left */}
         <ScrollReveal direction="left">
-          <div className="wwd-card">
+          <div className="wwd-card wwd-card-teal">
             <div className="wwd-img-container">
               <img src={paathshalaImg} alt="Paathshala Initiative" />
-              <div className="wwd-img-badge">PRIMARY AVENUE 01</div>
+              <div className="wwd-img-badge wwd-badge-teal">PRIMARY AVENUE 01</div>
             </div>
             <div className="wwd-card-content">
               <h3 className="wwd-card-title">PAATHSHALA</h3>
               <p className="wwd-card-desc">
-                We create safe, welcoming spaces within communities where we provide
-                daily tuition, assist with formal school admissions, and ensure safe
-                travel to and from classrooms. We also take care of all resources and
-                stationery items to avoid any hurdles in their educational journey.
+                Providing <strong>free daily tuition classes</strong>, sponsoring formal admissions into <strong>KV & JNV schools</strong>, and supplying complete educational resources & safe transport for underprivileged children.
               </p>
-              <Link to="/paathshala" className="wwd-btn">
+              <Link to="/paathshala" className="wwd-btn wwd-btn-teal">
                 Explore Paathshala &rarr;
               </Link>
             </div>
@@ -44,20 +41,17 @@ const WhatWeDoSection = () => {
 
         {/* Outreach Card - Slide from Right */}
         <ScrollReveal direction="right" delay={150}>
-          <div className="wwd-card">
+          <div className="wwd-card wwd-card-green">
             <div className="wwd-img-container">
               <img src={outreachImg} alt="Outreach Initiative" />
-              <div className="wwd-img-badge">PRIMARY AVENUE 02</div>
+              <div className="wwd-img-badge wwd-badge-green">PRIMARY AVENUE 02</div>
             </div>
             <div className="wwd-card-content">
               <h3 className="wwd-card-title">OUTREACH</h3>
               <p className="wwd-card-desc">
-                We bring the joy of learning to life through hands-on learning,
-                demonstrative learning, and experiential learning. This encompasses
-                our interactive sessions, mentorship, teacher training programs, and
-                career counselling to help students chart their own paths.
+                Fostering <strong>scientific temper, STEM innovation, and financial literacy</strong> through hands-on workshops, career counselling sessions, and Atal Tinkering Labs (ATL) teacher training.
               </p>
-              <Link to="/outreach" className="wwd-btn">
+              <Link to="/outreach" className="wwd-btn wwd-btn-green">
                 Explore Outreach &rarr;
               </Link>
             </div>

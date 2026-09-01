@@ -43,7 +43,7 @@
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #fbbf24;
+  color: #2dd4bf;
   margin-bottom: 8px;
 }
 
@@ -54,7 +54,7 @@
   font-weight: 600;
   color: #ffffff;
   text-decoration: underline;
-  text-decoration-color: #eab308;
+  text-decoration-color: #16a34a;
   text-underline-offset: 16px;
   text-decoration-thickness: 3px;
   margin: 0 0 1.8rem 0;
@@ -87,13 +87,6 @@
   flex-direction: column;
 }
 
-.impact-card:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.06);
-  border-color: #f59e0b;
-  box-shadow: 0 14px 32px rgba(217, 119, 6, 0.2);
-}
-
 .impact-card-top {
   display: flex;
   align-items: center;
@@ -105,15 +98,15 @@
   font-family: "Outfit", sans-serif;
   font-size: 46px;
   font-weight: 800;
-  color: #fbbf24;
   line-height: 1;
   letter-spacing: -1px;
+  transition: color 0.3s ease;
 }
 
 .impact-accent-line {
   height: 2px;
   width: 32px;
-  background: #d97706;
+  transition: background 0.3s ease;
 }
 
 .impact-label {
@@ -132,6 +125,55 @@
   color: #a1a1aa;
   margin: 0;
   text-align: justify;
+}
+
+/* Pehchaan Multi-Color Impact Cards (Teal, Green, Orange, Gold) */
+.impact-card:nth-child(1):hover {
+  background: rgba(13, 148, 136, 0.08);
+  border-color: var(--color-teal);
+  box-shadow: 0 14px 32px var(--color-teal-glow);
+}
+.impact-card:nth-child(1) .impact-num {
+  color: #2dd4bf;
+}
+.impact-card:nth-child(1) .impact-accent-line {
+  background: var(--color-teal);
+}
+
+.impact-card:nth-child(2):hover {
+  background: rgba(22, 163, 74, 0.08);
+  border-color: var(--color-green);
+  box-shadow: 0 14px 32px var(--color-green-glow);
+}
+.impact-card:nth-child(2) .impact-num {
+  color: #4ade80;
+}
+.impact-card:nth-child(2) .impact-accent-line {
+  background: var(--color-green);
+}
+
+.impact-card:nth-child(3):hover {
+  background: rgba(249, 115, 22, 0.08);
+  border-color: var(--color-orange);
+  box-shadow: 0 14px 32px var(--color-orange-glow);
+}
+.impact-card:nth-child(3) .impact-num {
+  color: #fb923c;
+}
+.impact-card:nth-child(3) .impact-accent-line {
+  background: var(--color-orange);
+}
+
+.impact-card:nth-child(4):hover {
+  background: rgba(234, 179, 8, 0.08);
+  border-color: #f59e0b;
+  box-shadow: 0 14px 32px rgba(245, 158, 11, 0.2);
+}
+.impact-card:nth-child(4) .impact-num {
+  color: #fbbf24;
+}
+.impact-card:nth-child(4) .impact-accent-line {
+  background: #d97706;
 }
 
 @media screen and (max-width: 1024px) {

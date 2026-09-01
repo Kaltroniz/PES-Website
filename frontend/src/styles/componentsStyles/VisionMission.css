@@ -23,7 +23,7 @@
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #d97706; /* Rich Amber Gold */
+  color: #0d9488;
   margin-bottom: 6px;
 }
 
@@ -32,9 +32,9 @@
   text-align: center;
   font-size: 56px;
   font-weight: 600;
-  color: #0f172a; /* Deep Black/Charcoal */
+  color: #0f172a;
   text-decoration: underline;
-  text-decoration-color: #eab308; /* Golden Accent */
+  text-decoration-color: #16a34a;
   text-underline-offset: 16px;
   text-decoration-thickness: 3px;
   margin: 0 0 1.8rem 0;
@@ -192,21 +192,14 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 
-.vm-split-item:hover {
-  background: #fffdfa; /* Warm golden-tinted white */
-  border-color: #f59e0b; /* Golden border */
-  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.1);
-  transform: translateX(6px);
-}
-
-/* Golden Circular Number Badge */
+/* Base Item Styling */
 .vm-split-num {
   font-family: "Outfit", sans-serif;
   font-size: 16px;
   font-weight: 800;
-  color: #92400e; /* Deep Amber */
-  background: #fef3c7; /* Light Golden Cream */
-  border: 1.5px solid #fde68a;
+  color: #0f172a;
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -217,31 +210,79 @@
   transition: all 0.25s ease;
 }
 
-.vm-split-item:hover .vm-split-num {
-  background: #f59e0b;
-  color: #ffffff;
-  border-color: #f59e0b;
-  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.35);
-}
-
 .vm-split-text {
   flex: 1;
 }
 
-/* Title Styling: Bold Golden-Black Aesthetic */
 .vm-highlight-title {
   font-family: "Outfit", sans-serif;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.3px;
-  color: #b45309; /* Rich Amber Gold */
   margin: 0 0 8px 0;
   line-height: 1.35;
   transition: color 0.25s ease;
 }
 
-.vm-split-item:hover .vm-highlight-title {
-  color: #92400e;
+/* Alternating Multi-Color Brand Accents (Teal, Green, Orange) */
+.vm-split-item:nth-child(1):hover {
+  background: #f0fdfa;
+  border-color: var(--color-teal);
+  box-shadow: 0 8px 20px var(--color-teal-glow);
+}
+.vm-split-item:nth-child(1):hover .vm-split-num {
+  background: var(--color-teal);
+  color: #ffffff;
+  border-color: var(--color-teal);
+}
+.vm-split-item:nth-child(1) .vm-highlight-title {
+  color: #0f766e;
+}
+
+.vm-split-item:nth-child(2):hover {
+  background: #f0fdf4;
+  border-color: var(--color-green);
+  box-shadow: 0 8px 20px var(--color-green-glow);
+}
+.vm-split-item:nth-child(2):hover .vm-split-num {
+  background: var(--color-green);
+  color: #ffffff;
+  border-color: var(--color-green);
+}
+.vm-split-item:nth-child(2) .vm-highlight-title {
+  color: #15803d;
+}
+
+.vm-split-item:nth-child(3):hover {
+  background: #fff8f1;
+  border-color: var(--color-orange);
+  box-shadow: 0 8px 20px var(--color-orange-glow);
+}
+.vm-split-item:nth-child(3):hover .vm-split-num {
+  background: var(--color-orange);
+  color: #ffffff;
+  border-color: var(--color-orange);
+}
+.vm-split-item:nth-child(3) .vm-highlight-title {
+  color: #c2410c;
+}
+
+/* Item 4 & Item 5: Pehchaan Teal Blue */
+.vm-split-item:nth-child(4):hover,
+.vm-split-item:nth-child(5):hover {
+  background: #f0fdfa;
+  border-color: var(--color-teal);
+  box-shadow: 0 8px 20px var(--color-teal-glow);
+}
+.vm-split-item:nth-child(4):hover .vm-split-num,
+.vm-split-item:nth-child(5):hover .vm-split-num {
+  background: var(--color-teal);
+  color: #ffffff;
+  border-color: var(--color-teal);
+}
+.vm-split-item:nth-child(4) .vm-highlight-title,
+.vm-split-item:nth-child(5) .vm-highlight-title {
+  color: #0d9488;
 }
 
 .vm-split-desc {

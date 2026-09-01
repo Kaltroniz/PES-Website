@@ -92,7 +92,7 @@
   letter-spacing: -1.5px;
   line-height: 1.08;
   margin: 0 0 1rem 0;
-  background: linear-gradient(135deg, #ffffff 0%, #fef08a 50%, #fbbf24 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #fed7aa 50%, #f97316 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.9));
@@ -138,8 +138,8 @@
 .hero-dot.active {
   width: 32px;
   border-radius: 12px;
-  background: #fbbf24;
-  box-shadow: 0 0 14px rgba(251, 191, 36, 0.85);
+  background: #f97316;
+  box-shadow: 0 0 14px rgba(249, 115, 22, 0.85);
 }
 
 /* --------------------------------------------------------------------------
@@ -170,7 +170,7 @@
   font-family: "Outfit", sans-serif;
   font-size: 38px;
   font-weight: 800;
-  color: #d97706;
+  color: #f97316;
   line-height: 1.1;
   margin-bottom: 4px;
 }

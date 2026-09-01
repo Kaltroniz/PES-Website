@@ -22,7 +22,7 @@
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #d97706;
+  color: #f97316;
   margin-bottom: 6px;
 }
 
@@ -33,7 +33,7 @@
   font-weight: 600;
   color: #0f172a;
   text-decoration: underline;
-  text-decoration-color: #eab308;
+  text-decoration-color: #0d9488;
   text-underline-offset: 16px;
   text-decoration-thickness: 3px;
   margin: 0 0 1.8rem 0;
@@ -135,29 +135,48 @@
   flex: 1;
 }
 
-.wwd-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-start;
-  background: #18181b;
-  color: #fbbf24;
-  border: 1.5px solid #d97706;
-  font-family: "Outfit", sans-serif;
-  font-size: 14.5px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 11px 24px;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.25s ease;
+.wwd-badge-teal {
+  border-color: rgba(13, 148, 136, 0.6);
+  color: #2dd4bf;
+  background: rgba(15, 23, 42, 0.9);
 }
 
-.wwd-btn:hover {
-  background: #d97706;
+.wwd-badge-green {
+  border-color: rgba(22, 163, 74, 0.6);
+  color: #4ade80;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.wwd-card-teal:hover {
+  border-color: var(--color-teal);
+  box-shadow: 0 16px 36px var(--color-teal-glow);
+}
+
+.wwd-card-green:hover {
+  border-color: var(--color-green);
+  box-shadow: 0 16px 36px var(--color-green-glow);
+}
+
+.wwd-btn-teal {
+  border-color: var(--color-teal);
+  color: #0d9488;
+}
+
+.wwd-btn-teal:hover {
+  background: var(--color-teal);
   color: #ffffff;
-  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.3);
-  transform: translateX(4px);
+  box-shadow: 0 6px 16px var(--color-teal-glow);
+}
+
+.wwd-btn-green {
+  border-color: var(--color-green);
+  color: #16a34a;
+}
+
+.wwd-btn-green:hover {
+  background: var(--color-green);
+  color: #ffffff;
+  box-shadow: 0 6px 16px var(--color-green-glow);
 }
 
 @media screen and (max-width: 900px) {
