@@ -92,14 +92,14 @@
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #fbbf24;
-  background: rgba(217, 119, 6, 0.25);
-  border: 1px solid rgba(251, 191, 36, 0.45);
+  color: #4ade80;
+  background: rgba(22, 163, 74, 0.25);
+  border: 1px solid rgba(74, 222, 128, 0.45);
   padding: 6px 18px;
   border-radius: 30px;
   margin-bottom: 1.2rem;
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+  box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
 }
 
 .vigyan-hero-title {
@@ -109,7 +109,7 @@
   letter-spacing: -1.5px;
   line-height: 1.08;
   margin: 0 0 1rem 0;
-  background: linear-gradient(135deg, #ffffff 0%, #fef08a 50%, #fbbf24 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #bbf7d0 50%, #4ade80 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.9));
@@ -155,8 +155,8 @@
 .hero-dot.active {
   width: 32px;
   border-radius: 12px;
-  background: #fbbf24;
-  box-shadow: 0 0 14px rgba(251, 191, 36, 0.85);
+  background: #4ade80;
+  box-shadow: 0 0 14px rgba(74, 222, 128, 0.85);
 }
 
 /* --------------------------------------------------------------------------
@@ -187,7 +187,7 @@
   font-family: "Outfit", sans-serif;
   font-size: 38px;
   font-weight: 800;
-  color: #d97706;
+  color: #16a34a;
   line-height: 1.1;
   margin-bottom: 4px;
 }
