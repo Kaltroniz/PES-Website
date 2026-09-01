@@ -75,6 +75,8 @@ function VigyanotsavPage() {
   const [loading, setLoading] = useState(true);
   const [active3DIndex, setActive3DIndex] = useState(0);
   const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
+  const [is3DPaused, setIs3DPaused] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -99,6 +101,15 @@ function VigyanotsavPage() {
     return () => clearInterval(timer);
   }, []);
 
+  // Automatic slide timer for 3D Perspective Card Stack Gallery
+  useEffect(() => {
+    if (is3DPaused) return;
+    const timer = setInterval(() => {
+      setActive3DIndex((prev) => (prev + 1) % gallery10Photos.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, [is3DPaused]);
+
   const handleNext3D = () => {
     setActive3DIndex((prev) => (prev + 1) % gallery10Photos.length);
   };
@@ -107,6 +118,22 @@ function VigyanotsavPage() {
     setActive3DIndex((prev) =>
       prev === 0 ? gallery10Photos.length - 1 : prev - 1
     );
+  };
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (diff > 40) {
+      handleNext3D();
+    } else if (diff < -40) {
+      handlePrev3D();
+    }
+    setTouchStartX(null);
   };
 
   return (
@@ -237,7 +264,13 @@ function VigyanotsavPage() {
           </ScrollReveal>
 
           {/* 3D Coverflow Container */}
-          <div className="gallery-3d-wrapper">
+          <div
+            className="gallery-3d-wrapper"
+            onMouseEnter={() => setIs3DPaused(true)}
+            onMouseLeave={() => setIs3DPaused(false)}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <button
               className="gallery-3d-nav-btn gallery-3d-prev"
               onClick={handlePrev3D}
