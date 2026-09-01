@@ -4,6 +4,7 @@ import { NavLink, useLocation } from "react-router-dom"
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 import Logo from '../assets/peslogo.png';
+import iitRoparLogo from '../assets/iit_ropar_logo_hd_official.png';
 
 import NavSubLinks from './NavSubLinks';
 
@@ -63,8 +64,10 @@ function Navbar(){
         >
           <div className='navbar'>
             <div style={{"backgroundColor": open ? "rgb(255, 255, 255)" : ""}} className="navbar-logo">
-              <NavLink to="/" onClick={handleHomeClick} style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none' }}>
-                <img src={Logo} alt="Pehchaan Ek Safar Logo" className="logo" />
+              <NavLink to="/" onClick={handleHomeClick} className="nav-brand-group">
+                <img src={Logo} alt="Pehchaan Ek Safar Logo" className="logo pes-nav-logo" />
+                <div className="nav-logo-divider"></div>
+                <img src={iitRoparLogo} alt="IIT Ropar Emblem" className="logo iit-nav-logo" />
               </NavLink>
               <div className="hamburger-menu" onClick={() => setOpen(!open)}>
                 {
