@@ -41,6 +41,11 @@ function Navbar(){
       };
     }, []);
 
+    const handleHomeClick = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      setOpen(false);
+    };
+
     useEffect(() => {
       setOpen(false);
       getLoginStatus();
@@ -58,7 +63,9 @@ function Navbar(){
         >
           <div className='navbar'>
             <div style={{"backgroundColor": open ? "rgb(255, 255, 255)" : ""}} className="navbar-logo">
-              <img src={Logo} alt="logo" className="logo" />
+              <NavLink to="/" onClick={handleHomeClick} style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none' }}>
+                <img src={Logo} alt="Pehchaan Ek Safar Logo" className="logo" />
+              </NavLink>
               <div className="hamburger-menu" onClick={() => setOpen(!open)}>
                 {
                   open ? <FaTimes /> : <FaBars />
@@ -67,7 +74,7 @@ function Navbar(){
             </div>
             
             <ul className="nav-links">
-              <li><NavLink to="/home" className="nav-item" activeClassName='active'>Home</NavLink></li>
+              <li><NavLink to="/" onClick={handleHomeClick} className="nav-item" activeClassName='active'>Home</NavLink></li>
               {/* Navsublinks */}
               <NavSubLinks />
               <li><NavLink to="/ourteam" className="nav-item" activeClassName='active'>Our Team</NavLink></li>
@@ -83,7 +90,7 @@ function Navbar(){
               style={{left: open ? "0%" : "-100%" }}
               className="mobile-nav-links"
             >
-              <li><NavLink to="/home" className="mobile-nav-item" activeClassName='active'>Home</NavLink></li>
+              <li><NavLink to="/" onClick={handleHomeClick} className="mobile-nav-item" activeClassName='active'>Home</NavLink></li>
               {/* Navsublinks */}
               <NavSubLinks />
               <li><NavLink to="/ourteam" className="mobile-nav-item" activeClassName='active'>Our Team</NavLink></li>
